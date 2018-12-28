@@ -19,18 +19,18 @@ remove_theme_support( 'offcanvas-menu' );
 beans_remove_action( 'beans_site_title_tag' );
 
 // Remove the secondary sidebar.
-add_action( 'widgets_init', 'example_widget_area' );
+add_action( 'widgets_init', 'secondary_widget_area' );
 
-function example_widget_area() {
+function secondary_widget_area() {
 
     beans_deregister_widget_area( 'sidebar_secondary' );
 
 }
 
 // Register a footer widget area.
-add_action( 'widgets_init', 'example_widget_area' );
+add_action( 'widgets_init', 'footer_widget_area' );
 
-function example_widget_area() {
+function footer_widget_area() {
 
     beans_register_widget_area( array(
         'name' => 'Footer',
@@ -41,9 +41,9 @@ function example_widget_area() {
 }
 
 // Display the footer widget area in the front end.
-add_action( 'beans_footer_before_markup', 'example_footer_widget_area' );
+add_action( 'beans_footer_before_markup', 'display_footer_widget_area' );
 
-function example_footer_widget_area() {
+function display_footer_widget_area() {
 
  ?>
   <div class="tm-mega-footer uk-block">
