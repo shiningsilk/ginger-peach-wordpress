@@ -21,6 +21,9 @@ beans_remove_action( 'beans_site_title_tag' );
 // Remove the secondary sidebar.
 add_action( 'widgets_init', 'secondary_widget_area' );
 
+// Remove the breadcrumb.
+add_filter( 'beans_pre_load_fragment_breadcrumb', '__return_true' );
+
 function secondary_widget_area() {
 
     beans_deregister_widget_area( 'sidebar_secondary' );
