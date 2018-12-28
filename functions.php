@@ -14,3 +14,12 @@ function beans_child_enqueue_assets() {
 
 // Remove the site title tag.
 beans_remove_action( 'beans_site_title_tag' );
+
+// Remove the secondary sidebar.
+add_action( 'widgets_init', 'example_widget_area' );
+
+function example_widget_area() {
+
+    beans_deregister_widget_area( 'sidebar_secondary' );
+
+}
