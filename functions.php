@@ -26,3 +26,31 @@ function example_widget_area() {
     beans_deregister_widget_area( 'sidebar_secondary' );
 
 }
+
+// Register a footer widget area.
+add_action( 'widgets_init', 'example_widget_area' );
+
+function example_widget_area() {
+
+    beans_register_widget_area( array(
+        'name' => 'Footer',
+        'id' => 'footer',
+        'beans_type' => 'grid'
+    ) );
+
+}
+
+// Display the footer widget area in the front end.
+add_action( 'beans_footer_before_markup', 'example_footer_widget_area' );
+
+function example_footer_widget_area() {
+
+ ?>
+  <div class="tm-mega-footer uk-block">
+   <div class="uk-container uk-container-center">
+      <?php echo beans_widget_area( 'footer' ); ?>
+    </div>
+  </div>
+  <?php
+
+}
