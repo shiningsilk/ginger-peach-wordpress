@@ -12,6 +12,9 @@ function beans_child_enqueue_assets() {
 
 }
 
+// Remove offcanvas menu.
+remove_theme_support( 'offcanvas-menu' );
+
 // Remove the site title tag.
 beans_remove_action( 'beans_site_title_tag' );
 
