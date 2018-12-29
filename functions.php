@@ -66,3 +66,16 @@ function example_modify_read_more() {
    return 'Read more';
 
 }
+
+// Modify the "Next" post navigation text.
+add_filter( 'beans_next_text_post_navigation_output', 'example_next_text_post_navigation' );
+
+function example_next_text_post_navigation( $text ) {
+
+ if ( $post = get_next_post() ) {
+    $text = $post->post_title;
+  }
+
+ return $text;
+
+}
