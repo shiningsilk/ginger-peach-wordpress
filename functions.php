@@ -67,6 +67,17 @@ function example_modify_read_more() {
 
 }
 
+// Remove post author
+add_filter( 'beans_post_meta_items', 'beans_child_remove_post_meta_items' );
+
+function beans_child_remove_post_meta_items( $items ) {
+
+ unset( $items['author'] );
+
+  return $items;
+
+}
+
 // Remove symbol after read more text
 beans_remove_markup( 'beans_next_icon[_more_link]' );
 
