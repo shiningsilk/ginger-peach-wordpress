@@ -67,6 +67,19 @@ function example_modify_read_more() {
 
 }
 
+// Modify the "Previous" post navigation text.
+add_filter( 'beans_previous_text_post_navigation_output', 'example_previous_text_post_navigation' );
+
+function example_previous_text_post_navigation() {
+
+  if ( $post = get_previous_post() ) {
+    $text = $post->post_title;
+  }
+
+ return $text;
+
+}
+
 // Modify the "Next" post navigation text.
 add_filter( 'beans_next_text_post_navigation_output', 'example_next_text_post_navigation' );
 
