@@ -57,3 +57,12 @@ function display_footer_widget_area() {
   <?php
 
 }
+
+// Modify the read more text.
+add_filter( 'beans_post_more_link_text_output', 'example_modify_read_more' );
+
+function example_modify_read_more() {
+
+   return 'Read more';
+
+}
