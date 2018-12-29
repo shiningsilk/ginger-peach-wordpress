@@ -67,6 +67,10 @@ function example_modify_read_more() {
 
 }
 
+// Remove symbol after read more text
+beans_remove_markup( 'beans_next_icon[_more_link]' );
+
+
 // Modify the "Previous" post navigation text.
 add_filter( 'beans_previous_text_post_navigation_output', 'example_previous_text_post_navigation' );
 
