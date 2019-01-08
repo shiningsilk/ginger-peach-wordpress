@@ -11,6 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .tm-header {
   color: #fff;
   background-color: #666;
+  border-bottom: none;
 }
 
 .uk-active {
@@ -19,4 +20,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .tm-main {
   background-color: #ccc;
+}
+
+.tm-site-branding {
+  text-transform: uppercase;
 }
