@@ -78,8 +78,10 @@ function beans_child_remove_post_meta_items( $items ) {
 
 }
 
-// Remove date prefix
+// Remove date, category, tag prefixes
 beans_remove_output( 'beans_post_meta_date_prefix' );
+beans_remove_output( 'beans_post_meta_categories_prefix' );
+beans_remove_output( 'beans_post_meta_tags_prefix' );
 
 // Remove symbol after read more text
 beans_remove_markup( 'beans_next_icon[_more_link]' );
