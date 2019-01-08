@@ -83,6 +83,9 @@ beans_remove_output( 'beans_post_meta_date_prefix' );
 beans_remove_output( 'beans_post_meta_categories_prefix' );
 beans_remove_output( 'beans_post_meta_tags_prefix' );
 
+// Remove "No comment yet" text
+beans_remove_action( 'beans_no_comment' );
+
 // Remove symbol after read more text
 beans_remove_markup( 'beans_next_icon[_more_link]' );
 
