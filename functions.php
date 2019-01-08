@@ -81,6 +81,8 @@ function beans_child_remove_post_meta_items( $items ) {
 // Remove symbol after read more text
 beans_remove_markup( 'beans_next_icon[_more_link]' );
 
+// Remove archive titles
+beans_remove_action( 'beans_post_archive_title' );
 
 // Modify the "Previous" post navigation text.
 add_filter( 'beans_previous_text_post_navigation_output', 'example_previous_text_post_navigation' );
@@ -106,4 +108,4 @@ function example_next_text_post_navigation( $text ) {
 
  return $text;
 
-}
+} 
