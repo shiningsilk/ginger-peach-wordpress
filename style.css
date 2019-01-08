@@ -8,8 +8,12 @@ Text Domain: tm-beans
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-header .tm-header .uk-block {
+.tm-header {
   color: #fff;
+  background-color: #666;
+}
+
+.uk-active {
   background-color: #666;
 }
 
