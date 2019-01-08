@@ -108,4 +108,21 @@ function example_next_text_post_navigation( $text ) {
 
  return $text;
 
-} 
+}
+
+// Enqueue uikit sticky
+add_action( 'beans_uikit_enqueue_scripts', 'uikit_addon_sticky');
+
+function uikit_addon_sticky() {
+
+	beans_uikit_enqueue_components( array('sticky'), 'add-ons');
+}
+
+// Add sticky header
+add_action( 'beans_before_load_document', 'beans_sticky_header');
+
+function beans_sticky_header() {
+
+	beans_add_attribute( 'beans_header', 'data-uk-sticky', "{top:0}" );
+
+}
