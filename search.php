@@ -27,7 +27,7 @@ function search_posts_grid() {
   add_filter( 'beans_edit_post_image_args', 'myprefix_post_image_edit_args' );
   function myprefix_post_image_edit_args( $args ) {
       return array_merge( $args, array(
-          'resize' => array( 300, 300, true ),
+          'resize' => array( 500, 500, true ),
       ) );
     }
 
