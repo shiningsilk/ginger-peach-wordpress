@@ -1,18 +1,20 @@
 <?php
 
 // Enqueue UIkit assets.
-add_action( 'beans_uikit_enqueue_scripts', 'archive_enqueue_uikit_assets' );
+add_action( 'beans_uikit_enqueue_scripts', 'search_enqueue_uikit_assets' );
 
-function archive_enqueue_uikit_assets() {
+function search_enqueue_uikit_assets() {
 
  beans_uikit_enqueue_components( array( 'grid' ), 'add-ons' );
 
 }
 
 // Display posts in a responsive dynamic grid.
-add_action( 'beans_before_load_document', 'archive_posts_grid' );
+add_action( 'beans_before_load_document', 'search_posts_grid' );
 
-function archive_posts_grid() {
+function search_posts_grid() {
+  // Remove search title
+  beans_remove_action( 'beans_post_search_title');
   // Remove post content
   beans_remove_action( 'beans_post_content');
   // Remove post meta info
@@ -20,15 +22,15 @@ function archive_posts_grid() {
   beans_remove_action( 'beans_post_meta_tags' );
   beans_remove_action( 'beans_post_meta_categories' );
   // Add grid.
-  beans_wrap_inner_markup( 'beans_content', 'archive_posts_grid', 'div', array(
+  beans_wrap_inner_markup( 'beans_content', 'search_posts_grid', 'div', array(
    'data-uk-grid' => "{gutter: 20}",
   ) );
-  beans_wrap_markup( 'beans_post', 'archive_post_grid_column', 'div', array(
+  beans_wrap_markup( 'beans_post', 'search_post_grid_column', 'div', array(
     'class' => 'uk-width-large-1-3 uk-width-medium-1-2',
   ) );
 
   // Move the posts pagination after the new grid markup.
- beans_modify_action_hook( 'beans_posts_pagination', 'archive_posts_grid_after_markup' );
+ beans_modify_action_hook( 'beans_posts_pagination', 'search_posts_grid_after_markup' );
 
 }
 
