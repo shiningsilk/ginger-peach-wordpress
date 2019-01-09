@@ -14,7 +14,7 @@ add_action( 'beans_before_load_document', 'archive_posts_grid' );
 
 function archive_posts_grid() {
   // Move the post image above the post title.
-beans_modify_action_hook( 'beans_post_image', 'beans_post_title_before_markup' );
+  beans_modify_action_hook( 'beans_post_image', 'beans_post_title_before_markup' );
   // Remove post content
   beans_remove_action( 'beans_post_content');
   // Remove post meta info
@@ -23,7 +23,8 @@ beans_modify_action_hook( 'beans_post_image', 'beans_post_title_before_markup' )
   beans_remove_action( 'beans_post_meta_categories' );
   // Add grid.
   beans_wrap_inner_markup( 'beans_content', 'archive_posts_grid', 'div', array(
-   'data-uk-grid' => "{gutter: 20}",
+    'class' => 'uk-grid uk-grid-match',
+    'data-uk-grid-margin' => ''
   ) );
   beans_wrap_markup( 'beans_post', 'archive_post_grid_column', 'div', array(
     'class' => 'uk-width-large-1-3 uk-width-medium-1-2',

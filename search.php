@@ -25,7 +25,8 @@ function search_posts_grid() {
   beans_remove_action( 'beans_post_meta_categories' );
   // Add grid.
   beans_wrap_inner_markup( 'beans_content', 'search_posts_grid', 'div', array(
-   'data-uk-grid' => "{gutter: 20}",
+    'class' => 'uk-grid uk-grid-match',
+    'data-uk-grid-margin' => ''
   ) );
   beans_wrap_markup( 'beans_post', 'search_post_grid_column', 'div', array(
     'class' => 'uk-width-large-1-3 uk-width-medium-1-2',
