@@ -12,6 +12,23 @@ function beans_child_enqueue_assets() {
 
 }
 
+// Enqueue uikit sticky
+add_action( 'beans_uikit_enqueue_scripts', 'uikit_addon_sticky');
+
+function uikit_addon_sticky() {
+
+	beans_uikit_enqueue_components( array('sticky'), 'add-ons');
+}
+
+// Add sticky header
+add_action( 'beans_before_load_document', 'beans_sticky_header');
+
+function beans_sticky_header() {
+
+	beans_add_attribute( 'beans_header', 'data-uk-sticky', "{top:0}" );
+
+}
+
 // Remove offcanvas menu.
 remove_theme_support( 'offcanvas-menu' );
 
@@ -120,19 +137,28 @@ function example_next_text_post_navigation( $text ) {
 }
 
 
-// Enqueue uikit sticky
-add_action( 'beans_uikit_enqueue_scripts', 'uikit_addon_sticky');
+// Post excerpts
+add_filter( 'the_content', 'beans_child_modify_post_content' );
+function beans_child_modify_post_content( $content ) {
+    // Returns full content a single view.
+    if ( is_singular() ) {
+        return $content;
+    }
+    // Returns the custom excerpt or truncated content with read more link.
 
-function uikit_addon_sticky() {
+    return sprintf(
+        '<p>%s</p><p>%s</p>',
+        has_excerpt() ? get_the_excerpt() : wp_trim_words( $content, 40, '...' ),
+        beans_post_more_link()
 
-	beans_uikit_enqueue_components( array('sticky'), 'add-ons');
+    );
+
 }
 
-// Add sticky header
-add_action( 'beans_before_load_document', 'beans_sticky_header');
-
-function beans_sticky_header() {
-
-	beans_add_attribute( 'beans_header', 'data-uk-sticky', "{top:0}" );
-
-}
+// Resize featured image on blog page
+add_filter( 'beans_edit_post_image_args', 'myprefix_post_image_edit_args' );
+function myprefix_post_image_edit_args( $args ) {
+		return array_merge( $args, array(
+				'resize' => array( 300, 300, true ),
+		) );
+	}
