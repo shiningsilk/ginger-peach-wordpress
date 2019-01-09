@@ -7,7 +7,7 @@ function search_posts_grid() {
   // Remove search title
   beans_remove_action( 'beans_post_search_title');
   // Move the post image above the post title.
-  beans_modify_action_hook( 'beans_post_image', 'beans_post_title_before_markup' );
+  beans_modify_action_hook( 'beans_post_image', 'beans_post_header_before_markup' );
   // Remove post content
   beans_remove_action( 'beans_post_content');
   // Remove post meta info

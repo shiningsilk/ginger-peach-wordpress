@@ -144,8 +144,7 @@ function beans_child_modify_post_content( $content ) {
     if ( is_singular() ) {
         return $content;
     }
-		// Move the post image above the post title.
-		beans_modify_action_hook( 'beans_post_image', 'beans_post_header_before_markup' );
+
     // Returns the custom excerpt or truncated content with read more link.
     return sprintf(
         '<p>%s</p><p>%s</p>',
@@ -155,6 +154,9 @@ function beans_child_modify_post_content( $content ) {
     );
 
 }
+
+// Move the post image above the post title.
+beans_modify_action_hook( 'beans_post_image', 'beans_post_header_before_markup' );
 
 	// Change featured image size on blog page
 add_filter( 'beans_edit_post_image_args', 'gingerp_post_image_edit_args' );

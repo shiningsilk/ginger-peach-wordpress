@@ -5,7 +5,7 @@ add_action( 'beans_before_load_document', 'archive_posts_grid' );
 
 function archive_posts_grid() {
   // Move the post image above the post title.
-  beans_modify_action_hook( 'beans_post_image', 'beans_post_title_before_markup' );
+  beans_modify_action_hook( 'beans_post_image', 'beans_post_header_before_markup' );
   // Remove post content
   beans_remove_action( 'beans_post_content');
   // Remove post meta info
