@@ -1,15 +1,6 @@
 <?php
 
-// Enqueue UIkit assets.
-add_action( 'beans_uikit_enqueue_scripts', 'archive_enqueue_uikit_assets' );
-
-function archive_enqueue_uikit_assets() {
-
- beans_uikit_enqueue_components( array( 'grid' ), 'add-ons' );
-
-}
-
-// Display posts in a responsive dynamic grid.
+// Display posts in a responsive grid.
 add_action( 'beans_before_load_document', 'archive_posts_grid' );
 
 function archive_posts_grid() {
