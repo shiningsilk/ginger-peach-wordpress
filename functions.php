@@ -155,10 +155,23 @@ function beans_child_modify_post_content( $content ) {
 
 }
 
-// Resize featured image on blog page
+// Change featured image size on blog page
 add_filter( 'beans_edit_post_image_args', 'myprefix_post_image_edit_args' );
 function myprefix_post_image_edit_args( $args ) {
 		return array_merge( $args, array(
 				'resize' => array( 300, 300, true ),
 		) );
 	}
+
+
+// Remove featured image on single posts
+add_action( 'wp', 'beans_child_setup_document' );
+
+function beans_child_setup_document() {
+
+  // Only apply if for single view.
+ if ( is_single() ) {
+    beans_remove_action( 'beans_post_image' );
+  }
+
+}
