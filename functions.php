@@ -78,9 +78,9 @@ function display_footer_widget_area() {
 
 
 // Modify the read more text.
-add_filter( 'beans_post_more_link_text_output', 'example_modify_read_more' );
+add_filter( 'beans_post_more_link_text_output', 'gpeach_modify_read_more' );
 
-function example_modify_read_more() {
+function gpeach_modify_read_more() {
 
    return 'Read more';
 
@@ -111,10 +111,29 @@ beans_remove_markup( 'beans_next_icon[_more_link]' );
 beans_remove_action( 'beans_post_archive_title' );
 
 
-// Modify the "Previous" post navigation text.
-add_filter( 'beans_previous_text_post_navigation_output', 'example_previous_text_post_navigation' );
+// Modify category separator
+add_filter( 'the_category', 'gpeach_categories_output', 10, 2 );
 
-function example_previous_text_post_navigation() {
+function gpeach_categories_output( $thelist, $separator ) {
+
+ return str_replace( $separator, ' &bull; ', $thelist );
+
+}
+
+// Modify tag separator
+add_filter( 'the_tags', 'gpeach_tags_output', 10, 3 );
+
+function gpeach_tags_output( $tag_list, $before, $sep ) {
+
+ return str_replace( $sep, ' &bull; ', $tag_list );
+
+}
+
+
+// Modify the "Previous" post navigation text.
+add_filter( 'beans_previous_text_post_navigation_output', 'gpeach_previous_text_post_navigation' );
+
+function gpeach_previous_text_post_navigation() {
 
   if ( $post = get_previous_post() ) {
     $text = $post->post_title;
@@ -125,9 +144,9 @@ function example_previous_text_post_navigation() {
 }
 
 // Modify the "Next" post navigation text.
-add_filter( 'beans_next_text_post_navigation_output', 'example_next_text_post_navigation' );
+add_filter( 'beans_next_text_post_navigation_output', 'gpeach_next_text_post_navigation' );
 
-function example_next_text_post_navigation( $text ) {
+function gpeach_next_text_post_navigation( $text ) {
 
  if ( $post = get_next_post() ) {
     $text = $post->post_title;

@@ -23,8 +23,8 @@ function archive_posts_grid() {
   ) );
 
   // Resize featured image
-  add_filter( 'beans_edit_post_image_args', 'myprefix_post_image_edit_args' );
-  function myprefix_post_image_edit_args( $args ) {
+  add_filter( 'beans_edit_post_image_args', 'gpeach_post_image_edit_args' );
+  function gpeach_post_image_edit_args( $args ) {
       return array_merge( $args, array(
           'resize' => array( 500, 500, true ),
       ) );
