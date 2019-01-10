@@ -93,6 +93,9 @@ function sort_meta_items( $meta ) {
 	return $meta;
 }
 
+// Move the post meta above post title 
+beans_modify_action_hook( 'beans_post_meta', 'beans_post_title_before_markup' );
+
 // Modify category separator
 add_filter( 'the_category', 'gpeach_categories_output', 10, 2 );
 
