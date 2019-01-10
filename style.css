@@ -25,3 +25,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .tm-site-branding {
   text-transform: uppercase;
 }
+
+.tm-article-image {
+  display: inline-block;
+  float: left;
+  margin: 0;
+  padding-right: 20px;
+}

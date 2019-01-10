@@ -163,7 +163,7 @@ add_filter( 'beans_edit_post_image_args', 'gingerp_post_image_edit_args' );
 
 function gingerp_post_image_edit_args( $args ) {
 		return array_merge( $args, array(
-				'resize' => array( 300, 300, true ),
+				'resize' => array( 400, 400, true ),
 		) );
 	}
 
