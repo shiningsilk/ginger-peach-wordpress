@@ -75,7 +75,7 @@ add_filter( 'beans_post_meta_items', 'beans_child_remove_post_meta_items' );
 
 function beans_child_remove_post_meta_items( $items ) {
 
- unset( $items['author'] );
+ unset( $items['author']['comments'] );
 
   return $items;
 
@@ -88,7 +88,6 @@ function sort_meta_items( $meta ) {
 	$meta = array (
 		'date' => 20,
 		'categories' => 30,
-		'comments' => 40
 	);
 
 	return $meta;
