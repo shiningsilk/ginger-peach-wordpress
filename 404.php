@@ -1,6 +1,6 @@
 <?php
 
-beans_modify_action_callback( 'beans_no_post', 'recent_posts_grid' );
+add_action( 'beans_content', 'recent_posts_grid' );
 
 function recent_posts_grid() {
   // Get the 3 latest posts
@@ -8,7 +8,7 @@ function recent_posts_grid() {
   // Remove post meta
   beans_remove_action( 'beans_post_meta' );
   // Add responsive grid
-  ?><div class="uk-grid uk-grid-match" data-uk-grid-margin=""><?php
+  ?><div id="recent-posts-grid" class="uk-grid uk-grid-match" data-uk-grid-margin=""><?php
   foreach ( $posts as $post ) {
     // Setup the postdata.
     global $post;
@@ -16,18 +16,16 @@ function recent_posts_grid() {
     ?>
     <div class="uk-width-large-1-3 uk-width-medium-1-2">
     <article class="uk-article uk-panel-box">
-
-
-    <?php
+      <?php
       beans_post_image();
       beans_post_title();
       ?>
-
     </article></div>
-
-  <?php
+    <?php
   }
-  ?> </div> <?php
+  ?>
+  </div>
+  <?php
 }
 
 // Resize featured image
