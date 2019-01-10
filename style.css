@@ -26,7 +26,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   text-transform: uppercase;
 }
 
-.tm-article-image {
+.home .tm-article-image {
   display: inline-block;
   float: left;
   margin: 0;
