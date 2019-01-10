@@ -11,7 +11,6 @@ function archive_posts_grid() {
   // Remove post meta info
   beans_remove_action( 'beans_post_meta' );
   beans_remove_action( 'beans_post_meta_tags' );
-  beans_remove_action( 'beans_post_meta_categories' );
   // Add grid.
   beans_wrap_inner_markup( 'beans_content', 'archive_posts_grid', 'div', array(
     'class' => 'uk-grid uk-grid-match',
@@ -36,8 +35,5 @@ function archive_posts_grid() {
 }
 
 
-
-
-
-// Load the document which is always needed at the bottom of template files.
+// Load the document
 beans_load_document();

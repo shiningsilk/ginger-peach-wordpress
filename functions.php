@@ -101,22 +101,41 @@ function beans_child_remove_post_meta_items( $items ) {
 
 }
 
-// Remove date, category, tag prefixes
-beans_remove_output( 'beans_post_meta_date_prefix' );
+
 // Remove "No comment yet" text
 beans_remove_action( 'beans_no_comment' );
 // Remove symbol after read more text
 beans_remove_markup( 'beans_next_icon[_more_link]' );
 // Remove archive titles
 beans_remove_action( 'beans_post_archive_title' );
+// Remove search title
+beans_remove_action( 'beans_post_search_title');
+// Remove end post categories
+beans_remove_action( 'beans_post_meta_categories' );
+// Remove prefixes
+beans_remove_output( 'beans_post_meta_date_prefix' );
+beans_remove_output( 'beans_post_meta_categories_prefix' );
+beans_remove_output( 'beans_post_meta_tags_prefix' );
 
+// Sort post meta
+add_filter( 'beans_post_meta_items', 'sort_meta_items' );
+function sort_meta_items( $meta ) {
+
+	$meta = array (
+		'date' => 20,
+		'categories' => 30,
+		'comments' => 40
+	);
+
+	return $meta;
+}
 
 // Modify category separator
 add_filter( 'the_category', 'gpeach_categories_output', 10, 2 );
 
 function gpeach_categories_output( $thelist, $separator ) {
 
- return str_replace( $separator, ' &bull; ', $thelist );
+	return str_replace( $separator, ' &bull; ', $thelist );
 
 }
 
@@ -125,7 +144,7 @@ add_filter( 'the_tags', 'gpeach_tags_output', 10, 3 );
 
 function gpeach_tags_output( $tag_list, $before, $sep ) {
 
- return str_replace( $sep, ' &bull; ', $tag_list );
+	return str_replace( $sep, ' &bull; ', $tag_list );
 
 }
 

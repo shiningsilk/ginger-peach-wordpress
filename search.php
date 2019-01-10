@@ -4,8 +4,6 @@
 add_action( 'beans_before_load_document', 'search_posts_grid' );
 
 function search_posts_grid() {
-  // Remove search title
-  beans_remove_action( 'beans_post_search_title');
   // Move the post image above the post title.
   beans_modify_action_hook( 'beans_post_image', 'beans_post_header_before_markup' );
   // Remove post content
@@ -13,7 +11,6 @@ function search_posts_grid() {
   // Remove post meta info
   beans_remove_action( 'beans_post_meta' );
   beans_remove_action( 'beans_post_meta_tags' );
-  beans_remove_action( 'beans_post_meta_categories' );
   // Add grid.
   beans_wrap_inner_markup( 'beans_content', 'search_posts_grid', 'div', array(
     'class' => 'uk-grid uk-grid-match',
@@ -36,9 +33,5 @@ function search_posts_grid() {
 
 }
 
-
-
-
-
-// Load the document which is always needed at the bottom of template files.
+// Load the document
 beans_load_document();
