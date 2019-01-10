@@ -31,76 +31,29 @@ function beans_sticky_header() {
 
 // Remove offcanvas menu.
 remove_theme_support( 'offcanvas-menu' );
-
-// Remove the site title tag.
-beans_remove_action( 'beans_site_title_tag' );
-
-// Remove the secondary sidebar.
-add_action( 'widgets_init', 'secondary_widget_area' );
-
 // Remove the breadcrumb.
 add_filter( 'beans_pre_load_fragment_breadcrumb', '__return_true' );
-
+// Remove the site title tag.
+beans_remove_action( 'beans_site_title_tag' );
+// Remove the secondary sidebar.
+add_action( 'widgets_init', 'secondary_widget_area' );
 function secondary_widget_area() {
 
-    beans_deregister_widget_area( 'sidebar_secondary' );
+		beans_deregister_widget_area( 'sidebar_secondary' );
 
 }
 
+// Remove featured image on single posts
+add_action( 'wp', 'beans_child_setup_document' );
 
-// Register a footer widget area.
-add_action( 'widgets_init', 'footer_widget_area' );
+function beans_child_setup_document() {
 
-function footer_widget_area() {
-
-    beans_register_widget_area( array(
-        'name' => 'Footer',
-        'id' => 'footer',
-        'beans_type' => 'grid'
-    ) );
+  // Only apply if for single view.
+ if ( is_single() ) {
+    beans_remove_action( 'beans_post_image' );
+  }
 
 }
-
-// Display the footer widget area in the front end.
-add_action( 'beans_footer_before_markup', 'display_footer_widget_area' );
-
-function display_footer_widget_area() {
-
- ?>
-  <div class="tm-mega-footer uk-block">
-   <div class="uk-container uk-container-center">
-      <?php echo beans_widget_area( 'footer' ); ?>
-    </div>
-  </div>
-  <?php
-
-}
-
-
-// Modify the read more text.
-add_filter( 'beans_post_more_link_text_output', 'gpeach_modify_read_more' );
-
-function gpeach_modify_read_more() {
-
-   return 'Read more';
-
-}
-
-// Add button class to read more link
-beans_add_attribute( 'beans_post_more_link', 'class', 'uk-button button' );
-
-
-// Remove post author
-add_filter( 'beans_post_meta_items', 'beans_child_remove_post_meta_items' );
-
-function beans_child_remove_post_meta_items( $items ) {
-
- unset( $items['author'] );
-
-  return $items;
-
-}
-
 
 // Remove "No comment yet" text
 beans_remove_action( 'beans_no_comment' );
@@ -116,6 +69,17 @@ beans_remove_action( 'beans_post_meta_categories' );
 beans_remove_output( 'beans_post_meta_date_prefix' );
 beans_remove_output( 'beans_post_meta_categories_prefix' );
 beans_remove_output( 'beans_post_meta_tags_prefix' );
+
+// Remove post author
+add_filter( 'beans_post_meta_items', 'beans_child_remove_post_meta_items' );
+
+function beans_child_remove_post_meta_items( $items ) {
+
+ unset( $items['author'] );
+
+  return $items;
+
+}
 
 // Sort post meta
 add_filter( 'beans_post_meta_items', 'sort_meta_items' );
@@ -135,7 +99,7 @@ add_filter( 'the_category', 'gpeach_categories_output', 10, 2 );
 
 function gpeach_categories_output( $thelist, $separator ) {
 
-	return str_replace( $separator, ' &bull; ', $thelist );
+	return str_replace( $separator, '   ', $thelist );
 
 }
 
@@ -147,6 +111,19 @@ function gpeach_tags_output( $tag_list, $before, $sep ) {
 	return str_replace( $sep, ' &bull; ', $tag_list );
 
 }
+
+
+// Modify the read more text.
+add_filter( 'beans_post_more_link_text_output', 'gpeach_modify_read_more' );
+
+function gpeach_modify_read_more() {
+
+   return 'Read more';
+
+}
+
+// Add button class to read more link
+beans_add_attribute( 'beans_post_more_link', 'class', 'uk-button button' );
 
 
 // Modify the "Previous" post navigation text.
@@ -176,14 +153,30 @@ function gpeach_next_text_post_navigation( $text ) {
 }
 
 
-// Remove featured image on single posts
-add_action( 'wp', 'beans_child_setup_document' );
+// Register a footer widget area.
+add_action( 'widgets_init', 'footer_widget_area' );
 
-function beans_child_setup_document() {
+function footer_widget_area() {
 
-  // Only apply if for single view.
- if ( is_single() ) {
-    beans_remove_action( 'beans_post_image' );
-  }
+    beans_register_widget_area( array(
+        'name' => 'Footer',
+        'id' => 'footer',
+        'beans_type' => 'grid'
+    ) );
+
+}
+
+// Display the footer widget area in the front end.
+add_action( 'beans_footer_before_markup', 'display_footer_widget_area' );
+
+function display_footer_widget_area() {
+
+ ?>
+  <div class="tm-mega-footer uk-block">
+   <div class="uk-container uk-container-center">
+      <?php echo beans_widget_area( 'footer' ); ?>
+    </div>
+  </div>
+  <?php
 
 }
