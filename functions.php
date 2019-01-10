@@ -86,6 +86,9 @@ function example_modify_read_more() {
 
 }
 
+// Add button class to read more link
+beans_add_attribute( 'beans_post_more_link', 'class', 'uk-button button' );
+
 
 // Remove post author
 add_filter( 'beans_post_meta_items', 'beans_child_remove_post_meta_items' );
