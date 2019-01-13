@@ -1,5 +1,17 @@
 <?php
 
+// Update the 404 page title
+beans_add_smart_action( 'beans_no_post_article_title_text_output', 'gpeach_404_post_title' );
+function gpeach_404_post_title() {
+ return beans_output( 'gpeach_no_post_article_title_text', __( 'Page not found', 'gpeach' ) );
+
+}
+// Update the 404 page content
+beans_add_smart_action( 'beans_no_post_article_content_text_output', 'gpeach_404_post_content' );
+function gpeach_404_post_content() {
+  return beans_output( 'gpeach_no_post_article_content_text', __( 'Try searching or check out some recent posts', 'gpeach' ) );
+}
+
 add_action( 'beans_content', 'recent_posts_grid' );
 
 function recent_posts_grid() {
@@ -13,7 +25,7 @@ function recent_posts_grid() {
   // Add responsive grid
   ?><div id="recent-posts-grid" class="uk-grid uk-grid-match" data-uk-grid-margin=""><?php
 
-  // Global variable 
+  // Global variable
   global $post;
 
   // Add posts
