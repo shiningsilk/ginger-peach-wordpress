@@ -8,6 +8,82 @@ Text Domain: tm-beans
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+/*
+Defaults
+  Typographical Elements
+  Headings
+Site Header
+  Header
+  Site Title
+  Navigation
+*/
+
+/*
+Defaults
+------------------------------------------------------------------------------- */
+
+/* Typographical Elements
+--------------------------------------------- */
+.tm-main {
+  background-color: #f8f8f8;
+  font-family: Open Sans, sans-serif;
+}
+
+a {
+
+}
+
+a:hover {
+
+}
+
+a:visited {
+
+}
+
+/* Headings
+--------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Montserrat, sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 14px;
+}
+
+
+/*
+Site Header
+------------------------------------------------------------------------------- */
+
+/* Header
+--------------------------------------------- */
 header  {
   padding: 0;
 }
@@ -21,6 +97,19 @@ header  {
   background-color: #fff;
 }
 
+/* Site Title
+--------------------------------------------- */
+.tm-site-branding {
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  letter-spacing: 2px;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+/* Navigation
+--------------------------------------------- */
 #gpeach-primary-mobile-menu {
   position: relative;
   z-index: 5;
@@ -33,18 +122,9 @@ header  {
 
 
 
-.tm-main {
-  background-color: #eee;
-}
 
-.tm-site-branding {
-  text-transform: uppercase;
-  font-family: Montserrat, sans-serif;
-  letter-spacing: 2px;
-  font-size: 20px;
-  line-height: 1.5;
-  margin-top: 6px;
-}
+
+
 
 .home .tm-article-image {
   display: inline-block;
