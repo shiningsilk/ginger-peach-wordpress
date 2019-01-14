@@ -12,13 +12,16 @@ function beans_child_enqueue_assets() {
 
 }
 
-// Enqueue uikit sticky
-add_action( 'beans_uikit_enqueue_scripts', 'uikit_addon_sticky');
+// Enqueue uikit assets
+add_action( 'beans_uikit_enqueue_scripts', 'gpeach_enqueue_uikit_assets');
 
-function uikit_addon_sticky() {
+function gpeach_enqueue_uikit_assets() {
 
 	beans_uikit_enqueue_components( array('sticky'), 'add-ons');
+	beans_uikit_enqueue_components( array( 'toggle' ) );
+
 }
+
 
 // Add sticky header
 add_action( 'beans_before_load_document', 'beans_sticky_header');
@@ -30,30 +33,12 @@ function beans_sticky_header() {
 }
 
 
+// Remove off canvas menu
+remove_theme_support( 'offcanvas-menu' );
 // Remove the breadcrumb.
 add_filter( 'beans_pre_load_fragment_breadcrumb', '__return_true' );
 // Remove the site title tag.
 beans_remove_action( 'beans_site_title_tag' );
-// Remove the secondary sidebar.
-add_action( 'widgets_init', 'secondary_widget_area' );
-function secondary_widget_area() {
-
-		beans_deregister_widget_area( 'sidebar_secondary' );
-
-}
-
-// Remove featured image on single posts
-add_action( 'wp', 'beans_child_setup_document' );
-
-function beans_child_setup_document() {
-
-  // Only apply if for single view.
- if ( is_single() ) {
-    beans_remove_action( 'beans_post_image' );
-  }
-
-}
-
 // Remove "No comment yet" text
 beans_remove_action( 'beans_no_comment' );
 // Remove symbol after read more text
@@ -69,19 +54,41 @@ beans_remove_output( 'beans_post_meta_date_prefix' );
 beans_remove_output( 'beans_post_meta_categories_prefix' );
 beans_remove_output( 'beans_post_meta_tags_prefix' );
 
+// Remove the secondary sidebar.
+add_action( 'widgets_init', 'secondary_widget_area' );
+
+function secondary_widget_area() {
+
+		beans_deregister_widget_area( 'sidebar_secondary' );
+
+}
+
+// Remove featured image on single posts
+add_action( 'wp', 'beans_child_setup_document' );
+
+function beans_child_setup_document() {
+
+  // Only apply if for single view.
+ if ( is_single() ) {
+    beans_remove_action( 'beans_post_image' );
+
+  }
+
+}
+
 // Remove post author
 add_filter( 'beans_post_meta_items', 'beans_child_remove_post_meta_items' );
 
 function beans_child_remove_post_meta_items( $items ) {
 
  unset( $items['author']['comments'] );
-
   return $items;
 
 }
 
 // Sort post meta
 add_filter( 'beans_post_meta_items', 'sort_meta_items' );
+
 function sort_meta_items( $meta ) {
 
 	$meta = array (
@@ -90,6 +97,7 @@ function sort_meta_items( $meta ) {
 	);
 
 	return $meta;
+
 }
 
 // Move the post meta above post title
@@ -120,7 +128,7 @@ add_filter( 'beans_post_more_link_text_output', 'gpeach_modify_read_more' );
 
 function gpeach_modify_read_more() {
 
-   return 'Read more';
+	return 'Read more';
 
 }
 
@@ -135,6 +143,7 @@ function gpeach_previous_text_post_navigation() {
 
   if ( $post = get_previous_post() ) {
     $text = $post->post_title;
+
   }
 
  return $text;
@@ -148,9 +157,44 @@ function gpeach_next_text_post_navigation( $text ) {
 
  if ( $post = get_next_post() ) {
     $text = $post->post_title;
+
   }
 
  return $text;
+
+}
+
+
+// Toggle mobile nav
+// Hide desktop primary nav
+beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
+
+// Add mobile nav toggle button
+add_action( 'beans_primary_menu_append_markup', 'gpeach_primary_menu_toggle' );
+
+function gpeach_primary_menu_toggle() {
+
+ ?><button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#gpeach-primary-mobile-menu'}"><i class="uk-icon-navicon"></i></button><?php
+
+}
+
+// Add primary mobile nav
+add_action( 'beans_header_append_markup', 'gpeach_primary_mobile_menu' );
+
+function gpeach_primary_mobile_menu() {
+
+  ?>
+  <div id="gpeach-primary-mobile-menu" class="uk-hidden uk-container uk-container-center">
+   <div class="uk-panel-box uk-panel-box-secondary uk-margin-top">
+     <?php wp_nav_menu( array(
+       'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
+       'fallback_cb' => 'beans_no_menu_notice',
+        'container' => '',
+        'beans_type' => 'sidenav' // This is giving the sidenav menu style for the sake of the gpeach.
+     ) ); ?>
+   </div>
+  </div>
+  <?php
 
 }
 
@@ -159,14 +203,13 @@ function gpeach_next_text_post_navigation( $text ) {
 beans_modify_action_callback( 'beans_footer_content', 'gpeach_footer_content' );
 
 function gpeach_footer_content() {
+
 	?> <div class="tm-sub-footer uk-text-center"> <p>©
 	<?php echo date('Y');
 	?> Ginger Peach. Site by <a href="http://kgeorge.co"  target="_blank" title="KGeorge"> KGeorge.</a></p></div>
 	<?php
+
 }
-
-
-
 
 
 // Register a footer widget area.
@@ -192,54 +235,6 @@ function display_footer_widget_area() {
    <div class="uk-container uk-container-center">
       <?php echo beans_widget_area( 'footer' ); ?>
     </div>
-  </div>
-  <?php
-
-}
-
-
-
-
-
-// Remove all traces of the offcanvas.
-remove_theme_support( 'offcanvas-menu' );
-
-// Add class to hide desktop primary nav which was removed with the off-canvas support.
-beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
-
-// Add the "toggle" uikit component, make sure you don't duplicate the 'beans_uikit_enqueue_scripts' callback if you already have one.
-add_action( 'beans_uikit_enqueue_scripts', 'example_enqueue_uikit_assets' );
-
-function example_enqueue_uikit_assets() {
-
-  beans_uikit_enqueue_components( array( 'toggle' ) );
-
-}
-
-// Add primary mobile nav toggle button.
-add_action( 'beans_primary_menu_append_markup', 'example_primary_menu_toggle' );
-
-function example_primary_menu_toggle() {
-
- ?><button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#example-primary-mobile-menu'}"><i class="uk-icon-navicon uk-margin-small-right"></i><?php _e( 'Menu', 'example' ); ?></button><?php
-
-}
-
-// Add primary mobile nav.
-add_action( 'beans_header_append_markup', 'example_primary_mobile_menu' );
-
-function example_primary_mobile_menu() {
-
-  ?>
-  <div id="example-primary-mobile-menu" class="uk-hidden uk-container uk-container-center">
-   <div class="uk-panel-box uk-panel-box-secondary uk-margin-top">
-     <?php wp_nav_menu( array(
-       'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
-       'fallback_cb' => 'beans_no_menu_notice',
-        'container' => '',
-        'beans_type' => 'sidenav' // This is giving the sidenav menu style for the sake of the example.
-     ) ); ?>
-   </div>
   </div>
   <?php
 
