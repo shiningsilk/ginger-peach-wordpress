@@ -10,7 +10,10 @@ function beans_child_enqueue_assets() {
 
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css' );
 
+	wp_enqueue_style( ' add_google_fonts ', ' https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400', false );
+
 }
+
 
 // Enqueue uikit assets
 add_action( 'beans_uikit_enqueue_scripts', 'gpeach_enqueue_uikit_assets');

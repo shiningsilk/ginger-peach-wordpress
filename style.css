@@ -8,10 +8,17 @@ Text Domain: tm-beans
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+header  {
+  padding: 0;
+}
 
 .tm-header {
-  background-color: #fff;
+  padding: 0;
+  border-bottom: none;
+}
 
+.uk-active {
+  background-color: #fff;
 }
 
 #gpeach-primary-mobile-menu {
@@ -24,9 +31,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   background-color: #fff;
 }
 
-.uk-active {
-  background-color: #fff;
-}
+
 
 .tm-main {
   background-color: #eee;
@@ -34,6 +39,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 .tm-site-branding {
   text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  letter-spacing: 2px;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 6px;
 }
 
 .home .tm-article-image {
