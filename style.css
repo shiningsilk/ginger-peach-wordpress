@@ -8,18 +8,28 @@ Text Domain: tm-beans
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+
 .tm-header {
-  color: #fff;
-  background-color: #666;
-  border-bottom: none;
+  background-color: #fff;
+
+}
+
+#gpeach-primary-mobile-menu {
+  position: relative;
+  z-index: 5;
+  background-color: #fff;
+}
+
+#gpeach-primary-mobile-menu .uk-panel-box-secondary {
+  background-color: #fff;
 }
 
 .uk-active {
-  background-color: #666;
+  background-color: #fff;
 }
 
 .tm-main {
-  background-color: #ccc;
+  background-color: #eee;
 }
 
 .tm-site-branding {
@@ -31,4 +41,43 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   float: left;
   margin: 0;
   padding-right: 20px;
+}
+
+.uk-article-title {
+  font-size: 22px;
+}
+
+#recent-posts-grid {
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 1199px) {
+
+  .home .tm-article-image {
+    width: 300px;
+    height: 300px;
+  }
+
+}
+
+@media only screen and (max-width: 959px) {
+
+  .home .tm-article-image {
+    width: 250px;
+    height: 250px;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 479px) {
+
+  .home .tm-article-image {
+    width: 100%;
+    height: auto;
+    float: none;
+
+  }
+
 }
