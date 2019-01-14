@@ -3,13 +3,13 @@
 // Post excerpts
 add_filter( 'the_content', 'beans_child_modify_post_content' );
 function beans_child_modify_post_content( $content ) {
-  // Returns the custom excerpt or truncated content with read more link.
+  // Returns the excerpt with read more link.
   return sprintf(
     '<p>%s</p><p>%s</p>',
     has_excerpt() ? get_the_excerpt() : wp_trim_words( $content, 50, '...' ),
           beans_post_more_link()
     );
-      
+
   }
 
 // Move the post image above the post title.
