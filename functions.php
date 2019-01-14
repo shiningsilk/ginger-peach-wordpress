@@ -188,19 +188,45 @@ beans_selfclose_markup_e( 'beans_primary_menu', 'gpeach_menu', 'i', array(
   'class' => 'uk-icon-button uk-icon-bars'
 ) ); */
 
-// drop down nav latest 
-beans_add_attribute('beans_primary_menu', 'class', 'data-uk-dropdown');
+// drop down nav latest
+/*beans_wrap_inner_markup( 'beans_primary_menu', 'new_dropdown_menu', 'div', array(
+	'class' => 'data-uk-dropdown', 'uk-button-dropdown'
+));*/
+
+
+
+/*
+//beans_add_attribute('beans_primary_menu', 'class', 'data-uk-dropdown');
 beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-nav uk-nav-dropdown');
+
 beans_wrap_markup('beans_menu[_navbar][_primary]', 'new_menu_toggle', 'div', array(
 	'class' => 'uk-dropdown'
+));
+
+beans_wrap_inner_markup( 'beans_primary_menu', 'new_dropdown_menu', 'div', array(
+	'class' => 'data-uk-dropdown uk-button-dropdown'
 ));
 
 add_action( 'beans_primary_menu_prepend_markup' , 'gpeach_mobile_menu');
 
 function gpeach_mobile_menu() {
-	?><i class="uk-icon-button uk-icon-bars"></i><?php
-}
+	?><button class="uk-button">menu</button><?php
+}*/
 
+
+/*
+beans_add_attribute('beans_primary_menu', 'class', 'uk-dropdown');
+beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-nav uk-nav-dropdown');
+
+beans_wrap_markup( 'beans_primary_menu' , 'new_menu_toggle', 'div', array(
+	'class' => 'data-uk-dropdown uk-button-dropdown'
+));
+
+add_action( 'new_menu_toggle_prepend_markup' , 'gpeach_mobile_menu');
+
+function gpeach_mobile_menu() {
+	?><button class="uk-button">menu</button><?php
+}*/
 
 
 
@@ -227,6 +253,54 @@ function display_footer_widget_area() {
    <div class="uk-container uk-container-center">
       <?php echo beans_widget_area( 'footer' ); ?>
     </div>
+  </div>
+  <?php
+
+}
+
+
+
+
+
+// Remove all traces of the offcanvas.
+remove_theme_support( 'offcanvas-menu' );
+
+// Add class to hide desktop primary nav which was removed with the off-canvas support.
+beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
+
+// Add the "toggle" uikit component, make sure you don't duplicate the 'beans_uikit_enqueue_scripts' callback if you already have one.
+add_action( 'beans_uikit_enqueue_scripts', 'example_enqueue_uikit_assets' );
+
+function example_enqueue_uikit_assets() {
+
+  beans_uikit_enqueue_components( array( 'toggle' ) );
+
+}
+
+// Add primary mobile nav toggle button.
+add_action( 'beans_primary_menu_append_markup', 'example_primary_menu_toggle' );
+
+function example_primary_menu_toggle() {
+
+ ?><button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#example-primary-mobile-menu'}"><i class="uk-icon-navicon uk-margin-small-right"></i><?php _e( 'Menu', 'example' ); ?></button><?php
+
+}
+
+// Add primary mobile nav.
+add_action( 'beans_header_append_markup', 'example_primary_mobile_menu' );
+
+function example_primary_mobile_menu() {
+
+  ?>
+  <div id="example-primary-mobile-menu" class="uk-hidden uk-container uk-container-center">
+   <div class="uk-panel-box uk-panel-box-secondary uk-margin-top">
+     <?php wp_nav_menu( array(
+       'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
+       'fallback_cb' => 'beans_no_menu_notice',
+        'container' => '',
+        'beans_type' => 'sidenav' // This is giving the sidenav menu style for the sake of the example.
+     ) ); ?>
+   </div>
   </div>
   <?php
 
