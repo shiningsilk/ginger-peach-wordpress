@@ -30,7 +30,9 @@ function beans_sticky_header() {
 }
 
 // Remove offcanvas menu.
-remove_theme_support( 'offcanvas-menu' );
+//remove_theme_support( 'offcanvas-menu' );
+
+
 // Remove the breadcrumb.
 add_filter( 'beans_pre_load_fragment_breadcrumb', '__return_true' );
 // Remove the site title tag.
@@ -93,8 +95,9 @@ function sort_meta_items( $meta ) {
 	return $meta;
 }
 
-// Move the post meta above post title 
+// Move the post meta above post title
 beans_modify_action_hook( 'beans_post_meta', 'beans_post_title_before_markup' );
+
 
 // Modify category separator
 add_filter( 'the_category', 'gpeach_categories_output', 10, 2 );
@@ -153,6 +156,52 @@ function gpeach_next_text_post_navigation( $text ) {
  return $text;
 
 }
+
+
+// Footer credits
+beans_modify_action_callback( 'beans_footer_content', 'gpeach_footer_content' );
+
+function gpeach_footer_content() {
+	?> <div class="tm-sub-footer uk-text-center"> <p>©
+	<?php echo date('Y');
+	?> Ginger Peach. Site by <a href="http://kgeorge.co"  target="_blank" title="KGeorge"> KGeorge.</a></p></div>
+	<?php
+}
+
+// primary menu
+
+
+/*
+beans_modify_action_callback( 'beans_primary_menu', 'gpeach_primary_menu');
+
+function gpeach_primary_menu() {
+	?> <div class="data-uk-dropdown="{mode:'click'}"><i class="uk-icon-button uk-icon-bars"></i>
+
+	<?php beans_primary_menu();
+	?></div>
+	<?php
+}
+
+
+
+beans_selfclose_markup_e( 'beans_primary_menu', 'gpeach_menu', 'i', array(
+  'class' => 'uk-icon-button uk-icon-bars'
+) ); */
+
+// drop down nav latest 
+beans_add_attribute('beans_primary_menu', 'class', 'data-uk-dropdown');
+beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-nav uk-nav-dropdown');
+beans_wrap_markup('beans_menu[_navbar][_primary]', 'new_menu_toggle', 'div', array(
+	'class' => 'uk-dropdown'
+));
+
+add_action( 'beans_primary_menu_prepend_markup' , 'gpeach_mobile_menu');
+
+function gpeach_mobile_menu() {
+	?><i class="uk-icon-button uk-icon-bars"></i><?php
+}
+
+
 
 
 // Register a footer widget area.
