@@ -21,7 +21,7 @@ beans_wrap_markup( 'beans_post', 'archive_post_grid_column', 'div', array(
 add_filter( 'beans_edit_post_image_args', 'gpeach_post_image_edit_args' );
 function gpeach_post_image_edit_args( $args ) {
   return array_merge( $args, array(
-    'resize' => array( 500, 500, true ),
+    'resize' => array( 400, 400, true ),
   ) );
 }
 
