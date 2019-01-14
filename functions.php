@@ -29,9 +29,6 @@ function beans_sticky_header() {
 
 }
 
-// Remove offcanvas menu.
-//remove_theme_support( 'offcanvas-menu' );
-
 
 // Remove the breadcrumb.
 add_filter( 'beans_pre_load_fragment_breadcrumb', '__return_true' );
@@ -168,65 +165,7 @@ function gpeach_footer_content() {
 	<?php
 }
 
-// primary menu
 
-
-/*
-beans_modify_action_callback( 'beans_primary_menu', 'gpeach_primary_menu');
-
-function gpeach_primary_menu() {
-	?> <div class="data-uk-dropdown="{mode:'click'}"><i class="uk-icon-button uk-icon-bars"></i>
-
-	<?php beans_primary_menu();
-	?></div>
-	<?php
-}
-
-
-
-beans_selfclose_markup_e( 'beans_primary_menu', 'gpeach_menu', 'i', array(
-  'class' => 'uk-icon-button uk-icon-bars'
-) ); */
-
-// drop down nav latest
-/*beans_wrap_inner_markup( 'beans_primary_menu', 'new_dropdown_menu', 'div', array(
-	'class' => 'data-uk-dropdown', 'uk-button-dropdown'
-));*/
-
-
-
-/*
-//beans_add_attribute('beans_primary_menu', 'class', 'data-uk-dropdown');
-beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-nav uk-nav-dropdown');
-
-beans_wrap_markup('beans_menu[_navbar][_primary]', 'new_menu_toggle', 'div', array(
-	'class' => 'uk-dropdown'
-));
-
-beans_wrap_inner_markup( 'beans_primary_menu', 'new_dropdown_menu', 'div', array(
-	'class' => 'data-uk-dropdown uk-button-dropdown'
-));
-
-add_action( 'beans_primary_menu_prepend_markup' , 'gpeach_mobile_menu');
-
-function gpeach_mobile_menu() {
-	?><button class="uk-button">menu</button><?php
-}*/
-
-
-/*
-beans_add_attribute('beans_primary_menu', 'class', 'uk-dropdown');
-beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-nav uk-nav-dropdown');
-
-beans_wrap_markup( 'beans_primary_menu' , 'new_menu_toggle', 'div', array(
-	'class' => 'data-uk-dropdown uk-button-dropdown'
-));
-
-add_action( 'new_menu_toggle_prepend_markup' , 'gpeach_mobile_menu');
-
-function gpeach_mobile_menu() {
-	?><button class="uk-button">menu</button><?php
-}*/
 
 
 
