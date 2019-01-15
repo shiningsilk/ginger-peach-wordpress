@@ -95,6 +95,7 @@ h4,
 h5,
 h6 {
   font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
   text-transform: uppercase;
 }
 
@@ -343,12 +344,12 @@ ul.uk-article-meta {
 /* Related Posts
 --------------------------------------------- */
 .related-posts {
+  background-color: #fff;
   padding: 20px 0;
 }
 
-.related-posts .uk-article-title {
+.related-posts h4.uk-article-title {
   font-size: 14px;
-  text-align: center;
 }
 
 /* Post Navigation
