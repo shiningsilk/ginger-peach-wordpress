@@ -258,4 +258,4 @@ function gpeach_border() {
 
 
 // Add sticky last widget
-beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', "{top:50}" );
+beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', "{top:50, media:844}" );
