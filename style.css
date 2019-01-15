@@ -27,13 +27,11 @@ Defaults
 
 /* Typographical Elements
 --------------------------------------------- */
-body {
-  font-family: Open Sans, sans-serif;
-  line-height: 1.625;
-}
 
 .tm-main {
-  background-color: #f8f8f8;
+  background-color: #eee;
+  font-family: Open Sans, sans-serif;
+  line-height: 1.625;
 }
 
 a {
@@ -114,7 +112,7 @@ header  {
 }
 
 .uk-active {
-  background-color: #fff;
+  background-color: #fcfcfc;
 }
 
 /* Site Title
@@ -187,6 +185,29 @@ Content Area
   color: #000;
 }
 
+/* Template Entries
+--------------------------------------------- */
+.archive .uk-article-title,
+.search .uk-article-title,
+.error404 .uk-article-title {
+  font-size: 16px;
+  margin: 0;
+  text-align: center;
+
+}
+
+.archive .uk-article,
+.search .uk-article,
+.error404 .uk-article {
+  padding: 0;
+}
+
+.archive .tm-article-image,
+.search .tm-article-image,
+.error404 .tm-article-image {
+  margin-bottom: 0;
+}
+
 /* Post Meta
 --------------------------------------------- */
 .uk-subnav-line > :nth-child(n+2):before {
@@ -195,7 +216,7 @@ Content Area
 
 .uk-text-small,
 .uk-article-meta,
-.uk-article-meta time{
+.uk-article-meta time {
   color: #000;
   font-family: Montserrat, sans-serif;
   font-size: 11px;
@@ -206,9 +227,12 @@ Content Area
 .uk-text-small a,
 .uk-article-meta a {
   color: #000;
+  font-size: 11px;
 }
 
-
+.related-posts {
+  padding: 20px 0;
+}
 
 
 @media only screen and (max-width: 1199px) {
