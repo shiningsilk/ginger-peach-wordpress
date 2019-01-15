@@ -34,7 +34,7 @@ function related_posts_tags() {
    }
 
    if ( $related ) {
-     printf( '<hr><div class="related-posts uk-block"><div class="uk-container uk-container-center"><h4 class="uk-h2 uk-text-center">You might like</h4><div class="uk-grid">%s</div></div></div>', $related );
+     printf( '<hr><div class="related-posts uk-block"><div class="uk-container uk-container-center"><h2 class="uk-text-center">You might like</h2><div class="uk-grid">%s</div></div></div>', $related );
     }
 
    wp_reset_query();
