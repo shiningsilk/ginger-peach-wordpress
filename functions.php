@@ -245,8 +245,6 @@ function display_footer_widget_area() {
 
 }
 
-
-
 // Add widget title border
 add_action( 'beans_widget_title_after_markup', 'gpeach_border');
 
@@ -254,8 +252,5 @@ function gpeach_border() {
 	?><div class="divider"></div><?php
 }
 
-
-
-
 // Add sticky last widget
-beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', "{top:50, media:844}" );
+beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', "{top:50, media:767}" );
