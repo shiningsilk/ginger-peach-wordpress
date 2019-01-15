@@ -27,14 +27,7 @@ function gpeach_enqueue_uikit_assets() {
 
 
 // Add sticky header
-add_action( 'beans_before_load_document', 'beans_sticky_header');
-
-function beans_sticky_header() {
-
-	beans_add_attribute( 'beans_header', 'data-uk-sticky', "{top:0}" );
-
-}
-
+beans_add_attribute( 'beans_header', 'data-uk-sticky', "{top:0}" );
 
 // Remove off canvas menu
 remove_theme_support( 'offcanvas-menu' );
@@ -260,3 +253,9 @@ add_action( 'beans_widget_title_after_markup', 'gpeach_border');
 function gpeach_border() {
 	?><div class="divider"></div><?php
 }
+
+
+
+
+// Add sticky last widget
+beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', "{top:50}" );
