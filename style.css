@@ -19,6 +19,8 @@ Site Header
 Content Area
   Entries
   Post Meta
+Sidebar
+Site Footer
 */
 
 /*
@@ -30,7 +32,7 @@ Defaults
 
 .tm-main {
   background-color: #eee;
-  font-family: Open Sans, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.625;
 }
 
@@ -39,18 +41,40 @@ a {
 }
 
 a:hover {
-  color: #fb898d;
+  color: #febea8;
   text-decoration: none;
 }
 
 a:visited {
-  color: #febea8;
+  color: #ccc;
 }
 
 blockquote {
   border-left: 5px solid #febea8;
   font-size: 14px;
 }
+
+.uk-button {
+  background-color: #d88255;
+  border-radius: 0;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.uk-button:hover,
+.more-link a:hover {
+  background-color: #febea8;
+  color: #fff;
+}
+
+a.more-link,
+a.more-link:visited {
+  color: #fff;
+}
+
 
 /* Headings
 --------------------------------------------- */
@@ -60,7 +84,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
 }
 
@@ -90,8 +114,18 @@ h6 {
 
 
 
-
-
+/* Forms
+--------------------------------------------- */
+.uk-form input,
+.uk-form select,
+.uk-form textarea,
+.uk-form input[type="search"] {
+  border: 1px solid #ccc;
+  border-radius: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  padding: 5px;
+}
 
 
 
@@ -118,7 +152,7 @@ header  {
 /* Site Title
 --------------------------------------------- */
 .tm-site-branding {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   letter-spacing: 2px;
   line-height: 1.5;
@@ -174,7 +208,7 @@ Content Area
 /* Entries
 --------------------------------------------- */
 .uk-article-title {
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 20px;
   letter-spacing: 1px;
   margin: 10px 0;
@@ -218,7 +252,7 @@ Content Area
 .uk-article-meta,
 .uk-article-meta time {
   color: #000;
-  font-family: Montserrat, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -234,6 +268,55 @@ Content Area
   padding: 20px 0;
 }
 
+.related-posts .uk-article-title {
+  font-size: 14px;
+  text-align: center;
+}
+
+.uk-pagination li > a {
+  background-color: #d88255;
+  border-radius: 0;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.uk-pagination li > a:hover {
+  background-color: #febea8;
+}
+
+/*
+Sidebar
+------------------------------------------------------------------------------- */
+.uk-panel-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/*
+Site Footer
+------------------------------------------------------------------------------- */
+.tm-footer {
+  border-top: none;
+  padding: 10px 0;
+}
+
+.tm-sub-footer p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.tm-sub-footer a {
+  color: #000;
+}
 
 @media only screen and (max-width: 1199px) {
 
