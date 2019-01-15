@@ -242,3 +242,5 @@ function display_footer_widget_area() {
   <?php
 
 }
+
+beans_remove_attribute( 'beans_post_meta_tags', 'class', 'uk-text-muted');
