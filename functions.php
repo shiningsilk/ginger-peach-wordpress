@@ -193,7 +193,7 @@ function gpeach_primary_mobile_menu() {
        'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
        'fallback_cb' => 'beans_no_menu_notice',
         'container' => '',
-        'beans_type' => 'sidenav' // This is giving the sidenav menu style for the sake of the gpeach.
+        'beans_type' => 'sidenav' 
      ) ); ?>
    </div>
   </div>

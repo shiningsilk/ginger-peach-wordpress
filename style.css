@@ -75,6 +75,12 @@ a.more-link:visited {
   color: #fff;
 }
 
+::selection,
+::-moz-selection {
+  background-color: #d88255;
+  color: #fff;
+}
+
 
 /* Headings
 --------------------------------------------- */
@@ -166,6 +172,49 @@ header  {
 
 /* Navigation
 --------------------------------------------- */
+.uk-navbar-nav > li,
+.uk-nav-side > li {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.uk-navbar-nav > li > a,
+.uk-nav-dropdown > li > a,
+.uk-nav-side > li > a,
+.uk-nav-sub > li > a {
+  color: #000;
+  font-size: 12px;
+}
+
+.uk-navbar-nav > li.uk-active > a,
+.uk-nav-dropdown > li.uk-active > a {
+  background-color: #fff;
+  border-bottom: 2px solid #febea8;
+  color: #000;
+}
+
+.uk-navbar-nav > li > a:hover,
+.uk-nav-dropdown > li > a:hover {
+  background-color: #d88255;
+  color: #fff;
+}
+
+.uk-dropdown {
+  padding: 5px;
+}
+
+.uk-nav-dropdown > li > a {
+  padding: 5px;
+  margin: 0 15px;
+}
+
+.uk-nav-side > li.uk-active > a {
+  background-color: #febea8;
+  color: #fff;
+}
+
+
 #gpeach-primary-mobile-menu {
   position: relative;
   z-index: 5;
@@ -219,6 +268,11 @@ Content Area
   color: #000;
 }
 
+/*
+.uk-article {
+  padding: 15px;
+}*/
+
 /* Template Entries
 --------------------------------------------- */
 .archive .uk-article-title,
@@ -262,6 +316,11 @@ Content Area
 .uk-article-meta a {
   color: #000;
   font-size: 11px;
+}
+
+.uk-text-small a:hover,
+.uk-article-meta a:hover {
+  color: #febea8;
 }
 
 .related-posts {
