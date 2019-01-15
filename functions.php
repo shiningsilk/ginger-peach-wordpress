@@ -112,7 +112,7 @@ add_filter( 'the_category', 'gpeach_categories_output', 10, 2 );
 
 function gpeach_categories_output( $thelist, $separator ) {
 
-	return str_replace( $separator, '   ', $thelist );
+	return str_replace( $separator, ' &bull; ', $thelist );
 
 }
 
