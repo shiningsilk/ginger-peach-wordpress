@@ -33,7 +33,7 @@ function related_posts_tags() {
       $tag_query->the_post();
       $img = get_the_post_thumbnail( $post->ID, 'thumbnail');
 
-      $related .= '<div class="uk-width-large-1-4 uk-width-medium-2-4 uk-width-small-2-4"><a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to' . get_the_title() . '">' . $img . '</a><h3 class="uk-article-title"><a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to' . get_the_title() . '">'. get_the_title() .'</a></h3></div>';
+      $related .= '<div class="uk-width-large-1-4 uk-width-medium-2-4 uk-width-small-2-4"><a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to' . get_the_title() . '">' . $img . '</a><h4 class="uk-article-title uk-text-center"><a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to' . get_the_title() . '">'. get_the_title() .'</a></h4></div>';
 
       }
 
@@ -41,7 +41,7 @@ function related_posts_tags() {
 
     if ( $related ) {
 
-      printf( '<hr><div class="related-posts uk-block"><div class="uk-container uk-container-center"><h2 class="uk-text-center">You might like</h2><div class="uk-grid">%s</div></div></div>', $related );
+      printf( '<div class="related-posts uk-block"><div class="uk-container uk-container-center"><h3 class="uk-text-center">You might like</h3><div class="uk-grid">%s</div></div></div>', $related );
 
     }
 
