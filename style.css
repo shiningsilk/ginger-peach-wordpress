@@ -18,7 +18,11 @@ Site Header
   Navigation
 Content Area
   Entries
+  Template Entries
   Post Meta
+  Post Navigation
+  Related Posts
+  Comments
 Sidebar
 Site Footer
 */
@@ -68,10 +72,17 @@ blockquote {
   text-transform: uppercase;
 }
 
-
 .uk-button:hover,
 .more-link a:hover {
   background-color: #febea8;
+  color: #fff;
+}
+
+.uk-button-primary:active,
+.uk-button-primary.uk-active,
+.uk-button:active,
+.uk-button.uk-active {
+  background-color: #d88255;
   color: #fff;
 }
 
@@ -341,17 +352,6 @@ ul.uk-article-meta {
   color: #febea8;
 }
 
-/* Related Posts
---------------------------------------------- */
-.related-posts {
-  background-color: #fff;
-  padding: 20px 0;
-}
-
-.related-posts h4.uk-article-title {
-  font-size: 14px;
-}
-
 /* Post Navigation
 --------------------------------------------- */
 .uk-pagination li > a {
@@ -370,6 +370,56 @@ ul.uk-article-meta {
 
 .uk-pagination > li > a:active {
   background-color: #febea8;
+}
+
+/* Related Posts
+--------------------------------------------- */
+.related-posts {
+  background-color: #fff;
+  padding: 20px 0;
+}
+
+.related-posts h4.uk-article-title {
+  font-size: 14px;
+}
+
+/* Comments
+--------------------------------------------- */
+.uk-comment {
+
+}
+
+.uk-comment-header {
+
+}
+
+.uk-comment-avatar img {
+  border-radius: 50%;
+}
+
+.uk-comment-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.uk-comment-meta {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.uk-comment-body {
+
+}
+
+.uk-comment-primary {
+
+}
+
+.uk-comment-list > li > ul > li {
+  background-color: #fafafa;
+  padding: 20px;
 }
 
 /*
