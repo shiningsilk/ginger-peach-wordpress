@@ -16,6 +16,9 @@ Site Header
   Header
   Site Title
   Navigation
+Content Area
+  Entries
+  Post Meta
 */
 
 /*
@@ -24,21 +27,31 @@ Defaults
 
 /* Typographical Elements
 --------------------------------------------- */
+body {
+  font-family: Open Sans, sans-serif;
+  line-height: 1.625;
+}
+
 .tm-main {
   background-color: #f8f8f8;
-  font-family: Open Sans, sans-serif;
 }
 
 a {
-
+  color: #d88255;
 }
 
 a:hover {
-
+  color: #fb898d;
+  text-decoration: none;
 }
 
 a:visited {
+  color: #febea8;
+}
 
+blockquote {
+  border-left: 5px solid #febea8;
+  font-size: 14px;
 }
 
 /* Headings
@@ -78,6 +91,13 @@ h6 {
 }
 
 
+
+
+
+
+
+
+
 /*
 Site Header
 ------------------------------------------------------------------------------- */
@@ -100,12 +120,16 @@ header  {
 /* Site Title
 --------------------------------------------- */
 .tm-site-branding {
-  text-transform: uppercase;
   font-family: Montserrat, sans-serif;
-  letter-spacing: 2px;
   font-size: 20px;
+  letter-spacing: 2px;
   line-height: 1.5;
   margin-top: 6px;
+  text-transform: uppercase;
+}
+
+.tm-site-branding a {
+  color: #000;
 }
 
 /* Navigation
@@ -125,7 +149,9 @@ header  {
 
 
 
-
+/*
+Content Area
+------------------------------------------------------------------------------- */
 .home .tm-article-image {
   display: inline-block;
   float: left;
@@ -137,9 +163,53 @@ header  {
   font-size: 22px;
 }
 
+/*
+.home .uk-article-meta li:first-child {
+  padding-left: 0!important;
+}
+*/
+
 #recent-posts-grid {
   margin-top: 40px;
 }
+
+/* Entries
+--------------------------------------------- */
+.uk-article-title {
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.uk-article-title a {
+  color: #000;
+}
+
+/* Post Meta
+--------------------------------------------- */
+.uk-subnav-line > :nth-child(n+2):before {
+  border-left: 1px solid #000;
+}
+
+.uk-text-small,
+.uk-article-meta,
+.uk-article-meta time{
+  color: #000;
+  font-family: Montserrat, sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.uk-text-small a,
+.uk-article-meta a {
+  color: #000;
+}
+
+
+
 
 @media only screen and (max-width: 1199px) {
 
@@ -159,7 +229,24 @@ header  {
 
 }
 
+@media only screen and (min-width: 480px) {
+  .home .uk-article-meta li:first-child {
+    padding-left: 0!important;
+  }
+}
+/*
+@media only screen and (max-width: 624px) {
 
+  .home .uk-subnav-line > :nth-child(n+2):before {
+    border-left: none;
+  }
+
+  .home .uk-article-meta li {
+    padding-left: 0!important;
+  }
+
+}
+*/
 
 @media only screen and (max-width: 479px) {
 
