@@ -33,7 +33,7 @@ function related_posts_tags() {
       $tag_query->the_post();
       $img = get_the_post_thumbnail( $post->ID, 'thumbnail');
 
-      $related .= '<div class="uk-width-large-1-4 uk-width-medium-2-4 uk-width-small-2-4"><a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to' . get_the_title() . '">' . $img . '</a><h3><a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to' . get_the_title() . '">'. get_the_title() .'</a></h3></div>';
+      $related .= '<div class="uk-width-large-1-4 uk-width-medium-2-4 uk-width-small-2-4"><a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to' . get_the_title() . '">' . $img . '</a><h3 class="uk-article-title"><a href="' . get_permalink() . '" rel="bookmark" title="Permanent Link to' . get_the_title() . '">'. get_the_title() .'</a></h3></div>';
 
       }
 
