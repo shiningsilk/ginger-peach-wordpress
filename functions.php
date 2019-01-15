@@ -125,6 +125,9 @@ function gpeach_tags_output( $tag_list, $before, $sep ) {
 
 }
 
+// Remove tag class
+beans_remove_attribute( 'beans_post_meta_tags', 'class', 'uk-text-muted');
+
 
 // Modify the read more text.
 add_filter( 'beans_post_more_link_text_output', 'gpeach_modify_read_more' );
@@ -152,6 +155,10 @@ function gpeach_previous_text_post_navigation() {
 
 }
 
+// Modify "Previous" post icon
+beans_replace_attribute( 'beans_previous_icon', 'class', 'uk-icon-angle-double-left', 'uk-icon-caret-left');
+
+
 // Modify the "Next" post navigation text.
 add_filter( 'beans_next_text_post_navigation_output', 'gpeach_next_text_post_navigation' );
 
@@ -165,6 +172,9 @@ function gpeach_next_text_post_navigation( $text ) {
  return $text;
 
 }
+
+// Modify "Next" post icon
+beans_replace_attribute( 'beans_next_icon', 'class', 'uk-icon-angle-double-right', 'uk-icon-caret-right');
 
 
 // Toggle mobile nav
@@ -242,8 +252,9 @@ function display_footer_widget_area() {
 
 }
 
-beans_remove_attribute( 'beans_post_meta_tags', 'class', 'uk-text-muted');
 
+
+// Add widget title border
 add_action( 'beans_widget_title_after_markup', 'gpeach_border');
 
 function gpeach_border() {

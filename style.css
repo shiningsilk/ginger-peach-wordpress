@@ -366,6 +366,10 @@ Content Area
 /*
 Sidebar
 ------------------------------------------------------------------------------- */
+.tm-secondary a:visited {
+  color: #000;
+}
+
 .uk-panel-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
@@ -377,8 +381,7 @@ Sidebar
 .divider {
   border-top: 2px solid #000;
   width: 30px;
-  height: 10px;
-  margin-bottom: 10px;
+  height: 8px;
   display: block;
 }
 
