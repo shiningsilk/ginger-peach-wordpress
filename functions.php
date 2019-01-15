@@ -138,7 +138,6 @@ function gpeach_modify_read_more() {
 // Add button class to read more link
 beans_add_attribute( 'beans_post_more_link', 'class', 'uk-button button' );
 
-
 // Modify the "Previous" post navigation text.
 add_filter( 'beans_previous_text_post_navigation_output', 'gpeach_previous_text_post_navigation' );
 
@@ -193,7 +192,7 @@ function gpeach_primary_mobile_menu() {
        'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
        'fallback_cb' => 'beans_no_menu_notice',
         'container' => '',
-        'beans_type' => 'sidenav' 
+        'beans_type' => 'sidenav'
      ) ); ?>
    </div>
   </div>
@@ -244,3 +243,9 @@ function display_footer_widget_area() {
 }
 
 beans_remove_attribute( 'beans_post_meta_tags', 'class', 'uk-text-muted');
+
+add_action( 'beans_widget_title_after_markup', 'gpeach_border');
+
+function gpeach_border() {
+	?><div class="divider"></div><?php
+}
