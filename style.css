@@ -96,6 +96,11 @@ a.more-link:visited {
   color: #fff;
 }
 
+:focus {
+  color: #000;
+  outline: none;
+}
+
 
 /* Headings
 --------------------------------------------- */
@@ -149,7 +154,19 @@ h6 {
   padding: 5px;
 }
 
+.uk-form input:focus,
+.uk-form textarea:focus,
+.uk-form input[type="search"]:focus {
+	background: #fff;
+	border: 1px solid #000;
+	color: #000;
+	outline: none;
+}
 
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
+input:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
 
 
 /*
@@ -403,7 +420,17 @@ ul.uk-article-meta {
 }
 
 .uk-comment-header {
+}
 
+.uk-comment-avatar {
+  float: none;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.depth-1 {
+  border-bottom: 2px solid #000;
 }
 
 .uk-comment-avatar img {
@@ -411,22 +438,50 @@ ul.uk-article-meta {
 
 }
 
+.gpeach-comment-meta {
+  margin-bottom: 10px;
+  height: 20px;
+}
 .uk-comment-title {
   display: inline-block;
+  float: left;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
+  line-height: 1.625;
+  margin: 0;
   text-transform: uppercase;
+
+}
+
+.uk-badge {
+  background: #d88255;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.625;
+  font-size: 10px;
+  font-weight: normal;
 }
 
 .uk-comment-meta {
   color: #000;
   display: inline-block;
+  float: right;
   font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-style: italic;
+
 }
 
-.uk-comment-body {
+/*
+.uk-comment-meta:before {
+  content: ' \007C';
+    display: inline-block;
+    height: 10px;
+    vertical-align: middle;
+}*/
 
+.uk-comment-body {
+  margin-top: 10px;
 }
 
 .uk-comment-primary {
@@ -437,6 +492,43 @@ ul.uk-article-meta {
   color: #fff;
 }
 
+/*.tm-comment-links > li {
+  display: inline-block;
+} */
+
+.uk-comment-header ul {
+  float: none;
+  margin: 0;;
+}
+
+.tm-comment-links > li > a {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.tm-comment-links > li {
+  background: #fafafa;
+  color: #000;
+  display: block;
+  padding: 0;
+  text-align: center;
+  width: 50%;
+}
+
+.tm-comment-links > li:hover {
+  background: #febea8;
+  color: #fff;
+}
+
+.tm-comment-links > li > a:hover {
+  color: #fff;
+}
+
+.uk-subnav-line > :nth-child(n+2):before {
+  display: none;
+}
 /*
 Sidebar
 ------------------------------------------------------------------------------- */
