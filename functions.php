@@ -253,4 +253,17 @@ function gpeach_border() {
 }
 
 // Add sticky last widget
-beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', "{top:50, media:767}" );
+beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:50, media:767}' );
+
+// Customize comments
+beans_add_attribute('beans_comment', 'class', 'uk-grid');
+beans_add_attribute( 'beans_comment_header', 'class', 'uk-width-1-6 uk-width-medium');
+beans_add_attribute( 'beans_comment_body', 'class', 'uk-width-5-6 uk-width-medium');
+
+beans_modify_action_hook( 'beans_comment_metadata', 'beans_comment_body_prepend_markup');
+
+beans_modify_action_hook( 'beans_comment_author', 'beans_comment_body_prepend_markup');
+
+beans_modify_action_hook( 'beans_links', 'beans_comment_header');
+
+beans_modify_action_hook( 'beans_comment_links', 'beans_comment_header_append_markup');

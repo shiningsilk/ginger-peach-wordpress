@@ -277,6 +277,7 @@ Content Area
   margin-top: 40px;
 }
 
+
 /* Entries
 --------------------------------------------- */
 .uk-article-title {
@@ -352,24 +353,36 @@ ul.uk-article-meta {
   color: #febea8;
 }
 
-/* Post Navigation
+/* Post/Page Navigation
 --------------------------------------------- */
-.uk-pagination li > a {
-  background-color: #d88255;
+.uk-pagination li > a,
+.uk-pagination > li > span {
+  background-color: #fafafa;
   border-radius: 0;
-  color: #fff;
+  color: #000;
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
-.uk-pagination li > a:hover {
+.single .uk-pagination li > a,
+.single .uk-pagination > li > span {
+  background: #d88255;
+  color: #fff;
+}
+
+.uk-pagination li > a:hover,
+.uk-pagination > li > a:focus  {
   background-color: #febea8;
 }
 
 .uk-pagination > li > a:active {
   background-color: #febea8;
+}
+
+.uk-pagination > .uk-active > span {
+  background: #d88255;
 }
 
 /* Related Posts
@@ -395,9 +408,11 @@ ul.uk-article-meta {
 
 .uk-comment-avatar img {
   border-radius: 50%;
+
 }
 
 .uk-comment-title {
+  display: inline-block;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
@@ -406,6 +421,7 @@ ul.uk-article-meta {
 
 .uk-comment-meta {
   color: #000;
+  display: inline-block;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -417,9 +433,8 @@ ul.uk-article-meta {
 
 }
 
-.uk-comment-list > li > ul > li {
-  background-color: #fafafa;
-  padding: 20px;
+#cancel-comment-reply-link:visited {
+  color: #fff;
 }
 
 /*
