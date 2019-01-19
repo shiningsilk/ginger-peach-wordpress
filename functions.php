@@ -175,15 +175,6 @@ beans_replace_attribute( 'beans_next_icon', 'class', 'uk-icon-angle-double-right
 // Hide desktop primary nav
 beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
 
-/*
-// Add mobile nav toggle button
-add_action( 'beans_primary_menu_append_markup', 'gpeach_primary_menu_toggle' );
-
-function gpeach_primary_menu_toggle() {
-
- ?><button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#gpeach-mobile-menu'}"><i class="uk-icon-navicon"></i></button><?php
-
-}*/
 
 // Add mobile nav toggle button
 add_action( 'beans_primary_menu_append_markup', 'gpeach_primary_menu_toggle' );
@@ -198,13 +189,6 @@ function gpeach_primary_menu_toggle() {
 add_action( 'beans_header_append_markup', 'gpeach_mobile_menu' );
 
 function gpeach_mobile_menu() {
-	//beans_add_attribute( 'beans_menu_item', 'class', 'uk-accordion-title');
-	//beans_add_attribute( 'beans_menu_item_link', 'class', 'uk-accordion-content');
-
-	/*beans_add_attributes( 'beans_menu[_sidenav][_primary]', array(
-		'class' => 'uk-accordion',
-		'data-uk-accordion' => ''
-	));*/
 
   ?>
   <div id="gpeach-mobile-menu" class="uk-hidden uk-container uk-container-center">
@@ -220,16 +204,6 @@ function gpeach_mobile_menu() {
   <?php
 
 }
-
-/*
-beans_add_attribute( 'beans_menu_item', 'data-uk-dropdown', '{mode:click}');
-
-beans_add_attribute( 'beans_sub_menu[_sidenav][_primary]', 'class', 'uk-nav uk-nav-dropdown');
-
-beans_wrap_markup( 'beans_sub_menu[_sidenav][_primary]', 'gpeach_mobile_subnav', 'div', array(
-	'class' => 'uk-dropdown'
-) );
-*/
 
 
 // Footer credits
