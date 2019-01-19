@@ -20,10 +20,9 @@ beans_wrap_inner_markup( 'beans_content', 'archive_posts_grid', 'div', array(
 
 beans_wrap_markup( 'beans_post', 'archive_post_grid_column', 'div', array(
 
-  'class' => 'uk-width-large-1-3 uk-width-medium-1-2',
-  'uk-grid-small'
+  'class' => 'uk-width-large-1-3 uk-width-small-1-2'
 
-  ));
+  ) );
 
 // Resize featured image
 add_filter( 'beans_edit_post_image_args', 'gpeach_post_image_edit_args' );

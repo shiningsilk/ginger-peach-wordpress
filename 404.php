@@ -9,15 +9,15 @@ function gpeach_404_post_title() {
 // Update the 404 page content
 beans_add_smart_action( 'beans_no_post_article_content_text_output', 'gpeach_404_post_content' );
 function gpeach_404_post_content() {
-  return beans_output( 'gpeach_no_post_article_content_text', __( 'Try searching or check out some recent posts', 'gpeach' ) );
+  return beans_output( 'gpeach_no_post_article_content_text', __( 'Try searching or check out some popular posts', 'gpeach' ) );
 }
 
-add_action( 'beans_content', 'recent_posts_grid' );
+add_action( 'beans_content', 'popular_posts_grid' );
 
-function recent_posts_grid() {
+function popular_posts_grid() {
 
   // Get latest posts
-  $custom_posts = get_posts( array( 'numberposts' => 6 ) );
+  $custom_posts = get_posts( array( 'numberposts' => 6, 'orderby' => 'comment_count' ) );
 
   // Remove post meta
   beans_remove_action( 'beans_post_meta' );
@@ -33,7 +33,7 @@ function recent_posts_grid() {
 
     // Setup the postdata.
     setup_postdata( $post );
-    ?><div class="uk-width-large-1-3 uk-width-medium-1-2">
+    ?><div class="uk-width-large-1-3 uk-width-small-1-2">
     <article class="uk-article uk-panel-box"><?php
 
     // Add post image and title
@@ -52,7 +52,7 @@ function recent_posts_grid() {
 add_filter( 'beans_edit_post_image_args', 'gpeach_post_image_edit_args' );
 function gpeach_post_image_edit_args( $args ) {
   return array_merge( $args, array(
-    'resize' => array( 500, 500, true ),
+    'resize' => array( 400, 400, true ),
     ) );
 }
 

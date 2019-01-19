@@ -20,7 +20,7 @@ beans_wrap_inner_markup( 'beans_content', 'search_posts_grid', 'div', array(
 
 beans_wrap_markup( 'beans_post', 'search_post_grid_column', 'div', array(
 
-  'class' => 'uk-width-large-1-3 uk-width-medium-1-2',
+  'class' => 'uk-width-large-1-3 uk-width-small-1-2',
 
   ));
 
