@@ -21,6 +21,7 @@ add_action( 'beans_uikit_enqueue_scripts', 'gpeach_enqueue_uikit_assets');
 function gpeach_enqueue_uikit_assets() {
 
 	beans_uikit_enqueue_components( array('sticky'), 'add-ons');
+	//beans_uikit_enqueue_components( array('accordion'), 'add-ons');
 	beans_uikit_enqueue_components( array( 'toggle' ) );
 
 }
@@ -174,22 +175,39 @@ beans_replace_attribute( 'beans_next_icon', 'class', 'uk-icon-angle-double-right
 // Hide desktop primary nav
 beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
 
+/*
 // Add mobile nav toggle button
 add_action( 'beans_primary_menu_append_markup', 'gpeach_primary_menu_toggle' );
 
 function gpeach_primary_menu_toggle() {
 
- ?><button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#gpeach-primary-mobile-menu'}"><i class="uk-icon-navicon"></i></button><?php
+ ?><button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#gpeach-mobile-menu'}"><i class="uk-icon-navicon"></i></button><?php
+
+}*/
+
+// Add mobile nav toggle button
+add_action( 'beans_primary_menu_append_markup', 'gpeach_primary_menu_toggle' );
+
+function gpeach_primary_menu_toggle() {
+
+ ?><button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#gpeach-mobile-menu'}"><i class="uk-icon-navicon"></i></button><?php
 
 }
 
 // Add primary mobile nav
-add_action( 'beans_header_append_markup', 'gpeach_primary_mobile_menu' );
+add_action( 'beans_header_append_markup', 'gpeach_mobile_menu' );
 
-function gpeach_primary_mobile_menu() {
+function gpeach_mobile_menu() {
+	//beans_add_attribute( 'beans_menu_item', 'class', 'uk-accordion-title');
+	//beans_add_attribute( 'beans_menu_item_link', 'class', 'uk-accordion-content');
+
+	/*beans_add_attributes( 'beans_menu[_sidenav][_primary]', array(
+		'class' => 'uk-accordion',
+		'data-uk-accordion' => ''
+	));*/
 
   ?>
-  <div id="gpeach-primary-mobile-menu" class="uk-hidden uk-container uk-container-center">
+  <div id="gpeach-mobile-menu" class="uk-hidden uk-container uk-container-center">
    <div class="uk-panel-box uk-panel-box-secondary uk-margin-top">
      <?php wp_nav_menu( array(
        'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
@@ -202,6 +220,16 @@ function gpeach_primary_mobile_menu() {
   <?php
 
 }
+
+/*
+beans_add_attribute( 'beans_menu_item', 'data-uk-dropdown', '{mode:click}');
+
+beans_add_attribute( 'beans_sub_menu[_sidenav][_primary]', 'class', 'uk-nav uk-nav-dropdown');
+
+beans_wrap_markup( 'beans_sub_menu[_sidenav][_primary]', 'gpeach_mobile_subnav', 'div', array(
+	'class' => 'uk-dropdown'
+) );
+*/
 
 
 // Footer credits
@@ -253,10 +281,10 @@ function gpeach_border() {
 }
 
 // Add sticky last widget
-beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:50, media:767}' );
+beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:30, media:767}' );
 
 
-
+/*
 // Customize comments
 beans_add_attribute('beans_comment', 'class', 'uk-grid');
 beans_add_attribute( 'beans_comment_header', 'class', 'uk-width-1-6 uk-width-medium');
@@ -279,13 +307,15 @@ function gpeach_comment_meta() {
 	<?php
 }
 
+beans_modify_action_hook( 'beans_comment_links', 'beans_comment_header_append_markup');
 
 beans_remove_action( 'beans_comment_metadata');
 beans_remove_action( 'beans_comment_author');
+*/
+
+
 //beans_modify_action_hook( 'beans_comment_metadata', 'gpeach_comment_body_prepend_markup');
 
 //beans_modify_action_hook( 'beans_comment_author', 'gpeach_comment_body_prepend_markup');
 
 //beans_modify_action_hook( 'beans_links', 'beans_comment_header');
-
-beans_modify_action_hook( 'beans_comment_links', 'beans_comment_header_append_markup');
