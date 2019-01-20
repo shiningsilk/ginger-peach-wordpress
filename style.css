@@ -252,6 +252,11 @@ header  {
   color: #181818;
 }
 
+.uk-dropdown,
+.uk-dropdown-blank  {
+  width: 100px;
+}
+
 /* Mobile Navigation
 --------------------------------------------- */
 #gpeach-primary-mobile-menu {
@@ -274,6 +279,35 @@ header  {
   color: #fff;
 }
 
+.mobile-nav {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  list-style-type: none;
+
+  text-transform: uppercase;
+}
+
+.mobile-nav > li > ul {
+  list-style-type: none;
+}
+
+.mobile-nav .menu-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+
+.mobile-nav .menu-item a,
+.mobile-nav .menu-item a:visited {
+  color: #181818;
+}
+
+
+.mobile-nav .menu-item a:hover {
+  color: #d88255;
+
+}
 
 /*
 Content Area

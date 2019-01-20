@@ -15,6 +15,8 @@ function beans_child_enqueue_assets() {
 }
 
 
+
+
 // Enqueue uikit assets
 add_action( 'beans_uikit_enqueue_scripts', 'gpeach_enqueue_uikit_assets');
 
@@ -176,6 +178,7 @@ beans_replace_attribute( 'beans_next_icon', 'class', 'uk-icon-angle-double-right
 beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
 
 
+
 // Add mobile nav toggle button
 add_action( 'beans_primary_menu_append_markup', 'gpeach_primary_menu_toggle' );
 
@@ -190,20 +193,28 @@ add_action( 'beans_header_append_markup', 'gpeach_mobile_menu' );
 
 function gpeach_mobile_menu() {
 
+
   ?>
   <div id="gpeach-mobile-menu" class="uk-hidden uk-container uk-container-center">
    <div class="uk-panel-box uk-panel-box-secondary uk-margin-top">
-     <?php wp_nav_menu( array(
+     <?php  wp_nav_menu( array(
+			 'menu_id' => 'gpeach-menu',
+			 'menu_class' => 'mobile-nav',
        'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
        'fallback_cb' => 'beans_no_menu_notice',
         'container' => '',
-        'beans_type' => 'sidenav'
-     ) ); ?>
+        'beans_type' => 'dropdown'
+     ) );
+
+
+		 ?>
    </div>
   </div>
   <?php
 
 }
+
+
 
 
 // Footer credits
