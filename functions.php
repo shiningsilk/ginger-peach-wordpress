@@ -304,3 +304,14 @@ beans_remove_action( 'beans_comment_author');
 //beans_modify_action_hook( 'beans_comment_author', 'gpeach_comment_body_prepend_markup');
 
 //beans_modify_action_hook( 'beans_links', 'beans_comment_header');
+
+/*
+function gpeach_comments_reply() {
+
+    if( is_singular() && comments_open() && ( get_option( 'thread_comments' ) == 1) ) {
+        // Load comment-reply.js (into footer)
+        wp_enqueue_script( 'comment-reply', 'wp-includes/js/comment-reply', array(), false, true );
+    }
+}
+add_action(  'wp_enqueue_scripts', 'gpeach_comments_reply' );
+*/
