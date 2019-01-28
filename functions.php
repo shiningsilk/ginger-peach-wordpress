@@ -10,7 +10,9 @@ function beans_child_enqueue_assets() {
 
 	wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css' );
 
-	wp_enqueue_style( ' add_google_fonts ', ' https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400', false );
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro|Open+Sans', array(), CHILD_THEME_VERSION );
+
+	wp_enqueue_script( 'gpeach_responsive_menu', get_bloginfo( 'stylesheet_directory' ) . '/js/responsive-menu.js', array( 'jquery' ));
 
 }
 
@@ -198,12 +200,11 @@ function gpeach_mobile_menu() {
   <div id="gpeach-mobile-menu" class="uk-hidden uk-container uk-container-center">
    <div class="uk-panel-box uk-panel-box-secondary uk-margin-top">
      <?php  wp_nav_menu( array(
-			 'menu_id' => 'gpeach-menu',
-			 'menu_class' => 'mobile-nav',
+			 'menu_class' => 'gpeach-menu',
        'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
        'fallback_cb' => 'beans_no_menu_notice',
         'container' => '',
-        'beans_type' => 'dropdown'
+        'beans_type' => 'mobile'
      ) );
 
 
@@ -224,7 +225,7 @@ function gpeach_footer_content() {
 
 	?> <div class="tm-sub-footer uk-text-center"> <p>©
 	<?php echo date('Y');
-	?> Ginger Peach. Site by <a href="http://kgeorge.co"  target="_blank" title="KGeorge"> KGeorge.</a></p></div>
+	?> Ginger Peach. Site by <a href="http://kgeorge.co"  target="_blank" title="KGeorge"> KG.</a></p></div>
 	<?php
 
 }
@@ -249,7 +250,7 @@ add_action( 'beans_footer_before_markup', 'display_footer_widget_area' );
 function display_footer_widget_area() {
 
  ?>
-  <div class="tm-mega-footer uk-block">
+  <div class="gpeach-footer uk-block">
    <div class="uk-container uk-container-center">
       <?php echo beans_widget_area( 'footer' ); ?>
     </div>

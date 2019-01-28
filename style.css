@@ -36,7 +36,7 @@ Defaults
 
 .tm-main {
   background-color: #fafafa;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   line-height: 1.625;
 }
 
@@ -66,7 +66,7 @@ blockquote {
   background-color: #d88255;
   border-radius: 0;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -110,7 +110,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -149,7 +149,7 @@ h6 {
 .uk-form input[type="search"] {
   border: 1px solid #ccc;
   border-radius: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
   padding: 5px;
 }
@@ -191,7 +191,7 @@ header  {
 /* Site Title
 --------------------------------------------- */
 .tm-site-branding {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   letter-spacing: 2px;
   line-height: 1.5;
@@ -207,7 +207,7 @@ header  {
 --------------------------------------------- */
 .uk-navbar-nav > li,
 .uk-nav-side > li {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -279,34 +279,48 @@ header  {
   color: #fff;
 }
 
-.mobile-nav {
-  font-family: 'Montserrat', sans-serif;
+.gpeach-menu {
+  font-family: 'Open Sans', sans-serif;
   letter-spacing: 1px;
   list-style-type: none;
-
   text-transform: uppercase;
 }
 
-.mobile-nav > li > ul {
+.gpeach-menu > li > ul {
   list-style-type: none;
 }
 
-.mobile-nav .menu-item {
+.gpeach-menu .menu-item {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-
-
-.mobile-nav .menu-item a,
-.mobile-nav .menu-item a:visited {
+.gpeach-menu .menu-item a,
+.gpeach-menu .menu-item a:visited {
   color: #181818;
 }
 
 
-.mobile-nav .menu-item a:hover {
+.gpeach-menu .menu-item a:hover {
   color: #d88255;
 
+}
+
+.gpeach-menu > .menu-item > .sub-menu {
+  display: none;
+}
+
+.gpeach-menu > .menu-item-has-children:before {
+  content: "\f104";
+  width: 20px;
+  margin-right: -10px;
+  float: right;
+  font-family: FontAwesome;
+  text-align: center;
+}
+
+.gpeach-menu .menu-open.menu-item-has-children:before {
+  content: "\f107";
 }
 
 /*
@@ -317,10 +331,6 @@ Content Area
   float: left;
   margin: 0;
   padding-right: 20px;
-}
-
-.uk-article-title {
-  font-size: 22px;
 }
 
 .page .uk-article-title {
@@ -340,7 +350,7 @@ Content Area
 /* Entries
 --------------------------------------------- */
 .uk-article-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   letter-spacing: 1px;
   line-height: 1.625;
@@ -384,7 +394,7 @@ Content Area
 .uk-alert-warning {
   background: #fafafa;
   color: #181818;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
 }
 /* Post Meta
@@ -401,7 +411,7 @@ ul.uk-article-meta {
 .uk-article-meta,
 .uk-article-meta time {
   color: #181818;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -416,6 +426,7 @@ ul.uk-article-meta {
 
 .uk-text-small a:hover,
 .uk-article-meta a:hover {
+  background: transparent;
   color: #febea8;
 }
 
@@ -426,7 +437,7 @@ ul.uk-article-meta {
   background-color: #fafafa;
   border-radius: 0;
   color: #181818;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -506,7 +517,7 @@ ul.uk-article-meta {
 .uk-comment-title {
   /*display: inline-block;
   float: left;*/
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
   line-height: 1.625;
@@ -517,17 +528,18 @@ ul.uk-article-meta {
 
 .uk-badge {
   background: #d88255;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.625;
   font-size: 10px;
   font-weight: normal;
+  display: none;
 }
 
 .uk-comment-meta {
   color: #181818;
   /*display: inline-block;
   float: right;*/
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 10px;
 
 
@@ -564,7 +576,7 @@ ul.uk-article-meta {
 
 .tm-comment-links > li > a {
   color: #181818;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -603,12 +615,12 @@ Sidebar
 }
 
 .tm-secondary {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
 }
 
 .uk-panel-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
   margin-bottom: 5px;
@@ -648,16 +660,23 @@ a.uk-icon-button:hover {
   height: 30px;
   line-height: 30px;
 }
+
 /*
 Site Footer
 ------------------------------------------------------------------------------- */
 .tm-footer {
+  background: #fafafa;
   border-top: none;
   padding: 10px 0;
 }
 
+.gpeach-footer {
+  background: #fafafa;
+  display: none;
+}
+
 .tm-sub-footer p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 10px;
   letter-spacing: 1px;
   margin-bottom: 0;
