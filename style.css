@@ -73,7 +73,8 @@ blockquote {
 }
 
 .uk-button:hover,
-.more-link a:hover {
+.more-link a:hover,
+.uk-button-primary:focus {
   background-color: #febea8;
   color: #fff;
 }
