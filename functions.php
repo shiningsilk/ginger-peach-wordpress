@@ -206,16 +206,12 @@ function gpeach_mobile_menu() {
         'beans_type' => 'mobile'
      ) );
 
-
 		 ?>
    </div>
   </div>
   <?php
 
 }
-
-
-
 
 // Footer credits
 beans_modify_action_callback( 'beans_footer_content', 'gpeach_footer_content' );
@@ -228,7 +224,6 @@ function gpeach_footer_content() {
 	<?php
 
 }
-
 
 // Register a footer widget area.
 add_action( 'widgets_init', 'footer_widget_area' );
@@ -267,51 +262,3 @@ function gpeach_border() {
 
 // Add sticky last widget
 beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:30, media:767}' );
-
-
-/*
-// Customize comments
-beans_add_attribute('beans_comment', 'class', 'uk-grid');
-beans_add_attribute( 'beans_comment_header', 'class', 'uk-width-1-6 uk-width-medium');
-//beans_add_attribute( 'beans_comment_body', 'class', 'uk-width-5-6 uk-width-medium');
-beans_wrap_markup( 'beans_comment_body', 'gpeach_comment_body', 'div', array(
-	'class' => 'uk-width-5-6 uk-width-medium'
-));
-
-
-add_action( 'gpeach_comment_body_prepend_markup', 'gpeach_comment_meta');
-
-function gpeach_comment_meta() {
-	?>
-	<div class='gpeach-comment-meta'>
-	<?php
-	beans_comment_author();
-	beans_comment_metadata();
-	?>
-	</div>
-	<?php
-}
-
-beans_modify_action_hook( 'beans_comment_links', 'beans_comment_header_append_markup');
-
-beans_remove_action( 'beans_comment_metadata');
-beans_remove_action( 'beans_comment_author');
-*/
-
-
-//beans_modify_action_hook( 'beans_comment_metadata', 'gpeach_comment_body_prepend_markup');
-
-//beans_modify_action_hook( 'beans_comment_author', 'gpeach_comment_body_prepend_markup');
-
-//beans_modify_action_hook( 'beans_links', 'beans_comment_header');
-
-/*
-function gpeach_comments_reply() {
-
-    if( is_singular() && comments_open() && ( get_option( 'thread_comments' ) == 1) ) {
-        // Load comment-reply.js (into footer)
-        wp_enqueue_script( 'comment-reply', 'wp-includes/js/comment-reply', array(), false, true );
-    }
-}
-add_action(  'wp_enqueue_scripts', 'gpeach_comments_reply' );
-*/
