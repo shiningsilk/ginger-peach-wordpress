@@ -195,10 +195,9 @@ add_action( 'beans_header_append_markup', 'gpeach_mobile_menu' );
 
 function gpeach_mobile_menu() {
 
-
   ?>
   <div id="gpeach-mobile-menu" class="uk-hidden uk-container uk-container-center">
-   <div class="uk-panel-box uk-panel-box-secondary uk-margin-top">
+   <div class="uk-panel-box uk-panel-box-secondary">
      <?php  wp_nav_menu( array(
 			 'menu_class' => 'gpeach-menu',
        'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
