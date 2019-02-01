@@ -6,7 +6,7 @@ function beans_child_modify_post_content( $content ) {
   // Returns the excerpt with read more link.
   return sprintf(
     '<p>%s</p><p>%s</p>',
-    has_excerpt() ? get_the_excerpt() : wp_trim_words( $content, 50, '...' ),
+    has_excerpt() ? get_the_excerpt() : wp_trim_words( $content, 100, '...' ),
           beans_post_more_link()
     );
 
