@@ -30,7 +30,6 @@ function gpeach_enqueue_uikit_assets() {
 
 }
 
-
 // Add sticky header
 beans_add_attribute( 'beans_header', 'data-uk-sticky', "{top:0}" );
 
@@ -197,7 +196,7 @@ function gpeach_mobile_menu() {
 
   ?>
   <div id="gpeach-mobile-menu" class="uk-hidden uk-container uk-container-center">
-   <div class="uk-panel-box uk-panel-box-secondary">
+   <div class="uk-panel-box">
      <?php  wp_nav_menu( array(
 			 'menu_class' => 'gpeach-menu',
        'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
