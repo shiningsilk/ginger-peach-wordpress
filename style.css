@@ -33,11 +33,14 @@ Defaults
 
 /* Typographical Elements
 --------------------------------------------- */
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
 .tm-main {
   background-color: #fafafa;
-  color: #181818;
   font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
   line-height: 1.625;
 }
 
@@ -192,7 +195,7 @@ header  {
 .tm-site-branding {
   font-family: 'Open Sans', sans-serif;
   letter-spacing: 2px;
-  margin-top: 6px;
+  margin-top: 4px;
   text-transform: uppercase;
 }
 
@@ -211,7 +214,11 @@ header  {
   color: #181818;
   font-family: 'Open Sans', sans-serif;
   font-size: 11px;
+  height: 26px;
   letter-spacing: 1px;
+  line-height: 26px;
+  margin-top: 6px;
+  padding: 0 10px;
   text-transform: uppercase;
 }
 
@@ -576,7 +583,7 @@ Sidebar
 
 .tm-secondary {
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .uk-panel-title {
