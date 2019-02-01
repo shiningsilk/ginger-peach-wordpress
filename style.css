@@ -1,6 +1,6 @@
 Theme Name: Ginger Peach
 Description: Child Theme for the Beans Theme.
-Author: KGeorge
+Author: KG
 Author URI: http://kgeorge.co
 Template: tm-beans
 Version: 1.0.0
@@ -199,7 +199,7 @@ header  {
 .tm-site-branding a {
   color: #181818;
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 1.625;
 }
 
 /* Navigation
