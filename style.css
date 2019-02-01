@@ -204,19 +204,15 @@ header  {
 
 /* Navigation
 --------------------------------------------- */
-.uk-navbar-nav > li,
-.uk-nav-side > li {
-  font-family: 'Open Sans', sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
 .uk-navbar-nav > li > a,
 .uk-nav-dropdown > li > a,
 .uk-nav-side > li > a,
 .uk-nav-sub > li > a {
   color: #181818;
-  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .uk-navbar-nav > li.uk-active > a,
@@ -672,13 +668,13 @@ Media Queries
 @media only screen and (max-width: 959px) {
 
   .home .tm-article-image {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
   }
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 
   .home .tm-article-image {
     height: 175px;
