@@ -16,9 +16,6 @@ function beans_child_enqueue_assets() {
 
 }
 
-
-
-
 // Enqueue uikit assets
 add_action( 'beans_uikit_enqueue_scripts', 'gpeach_enqueue_uikit_assets');
 
@@ -32,7 +29,6 @@ function gpeach_enqueue_uikit_assets() {
 
 // Add sticky header
 beans_add_attribute( 'beans_header', 'data-uk-sticky', "{top:0}" );
-
 // Remove off canvas menu
 remove_theme_support( 'offcanvas-menu' );
 // Remove the breadcrumb.
@@ -173,12 +169,18 @@ function gpeach_next_text_post_navigation( $text ) {
 // Modify "Next" post icon
 beans_replace_attribute( 'beans_next_icon', 'class', 'uk-icon-angle-double-right', 'uk-icon-caret-right');
 
+// Add widget title border
+add_action( 'beans_widget_title_after_markup', 'gpeach_border');
 
-// Toggle mobile nav
+function gpeach_border() {
+	?><div class="divider"></div><?php
+}
+
+// Add sticky last widget
+beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:30, media:767}' );
+
 // Hide desktop primary nav
 beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
-
-
 
 // Add mobile nav toggle button
 add_action( 'beans_primary_menu_append_markup', 'gpeach_primary_menu_toggle' );
@@ -224,19 +226,6 @@ function gpeach_footer_content() {
 
 }
 
-// Register a footer widget area.
-add_action( 'widgets_init', 'footer_widget_area' );
-
-function footer_widget_area() {
-
-    beans_register_widget_area( array(
-        'name' => 'Footer',
-        'id' => 'footer',
-        'beans_type' => 'grid'
-    ) );
-
-}
-
 // Display the footer widget area in the front end.
 add_action( 'beans_footer_before_markup', 'display_footer_widget_area' );
 
@@ -252,12 +241,15 @@ function display_footer_widget_area() {
 
 }
 
-// Add widget title border
-add_action( 'beans_widget_title_after_markup', 'gpeach_border');
+// Register a footer widget area.
+add_action( 'widgets_init', 'footer_widget_area' );
 
-function gpeach_border() {
-	?><div class="divider"></div><?php
+function footer_widget_area() {
+
+    beans_register_widget_area( array(
+        'name' => 'Footer',
+        'id' => 'footer',
+        'beans_type' => 'grid'
+    ) );
+
 }
-
-// Add sticky last widget
-beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:30, media:767}' );
