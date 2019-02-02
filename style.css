@@ -462,6 +462,10 @@ ul.uk-article-meta {
 
 .uk-text-small {
   text-transform: lowercase;
+  display: inline-block;
+  float: right;
+  margin-top: 16px;
+  max-width: 50%;
 }
 
 .uk-text-small a,
@@ -655,10 +659,15 @@ ul.uk-article-meta {
 
 /* Social Share Buttons
 --------------------------------------------- */
-.gpeach-social-share {
+/* .gpeach-social-share {
   position: fixed;
   top: 80px;
   right: 40px;
+}*/
+
+div.addtoany_share_save_container {
+  display: inline-block;
+
 }
 
 /* Contact form
