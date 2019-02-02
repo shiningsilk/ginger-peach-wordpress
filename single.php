@@ -41,7 +41,7 @@ function related_posts_tags() {
 
     if ( $related ) {
 
-      printf( '<div class="related-posts uk-block"><div class="uk-container uk-container-center"><h3 class="uk-text-center">You might like</h3><div class="uk-grid">%s</div></div></div>', $related );
+      printf( '<div class="related-posts uk-block"><div class="uk-container uk-container-center"><h3 class="uk-text-center">Other interesting things</h3><div class="uk-grid">%s</div></div></div>', $related );
 
     }
 
