@@ -1,6 +1,15 @@
 <?php
 add_action( 'beans_comments_before_markup', 'related_posts_tags', 5 );
 
+add_action( 'beans_main_after_markup', 'gpeach_social_share');
+
+function gpeach_social_share() {
+  ?><div class="gpeach-social-share">
+    <a href=""><i class="uk-icon-small uk-icon-pinterest uk-icon-hover"></i></a>
+  </div>
+  <?php
+}
+
 function related_posts_tags() {
 
   global $post;

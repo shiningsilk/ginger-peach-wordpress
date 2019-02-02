@@ -653,6 +653,14 @@ ul.uk-article-meta {
   border-color: #ddd;
 }
 
+/* Social Share Buttons
+--------------------------------------------- */
+.gpeach-social-share {
+  position: fixed;
+  top: 80px;
+  right: 40px;
+}
+
 /* Contact form
 --------------------------------------------- */
 label {
