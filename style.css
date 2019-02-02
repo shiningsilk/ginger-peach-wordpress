@@ -159,12 +159,16 @@ h6 {
 .uk-form input[type="text"],
 .uk-form input[type="email"] {
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   border-radius: 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
   padding: 5px;
   width: 100%;
+}
+
+.uk-form input[type="search"] {
+  border: 1px solid #ccc;
 }
 
 .uk-form input[type="submit"] {
@@ -309,8 +313,9 @@ header  {
 }
 
 .tm-primary-menu button:hover {
-  background: #d88255;
-  color: #fff;
+  background: #fafafa;
+  border: none;
+  color: #181818;
 }
 
 .gpeach-menu {
@@ -522,6 +527,10 @@ ul.uk-article-meta {
 
 /* Comments
 --------------------------------------------- */
+.tm-comments {
+  margin-top: 40px;
+}
+
 .tm-comments h2 {
   margin-bottom: 20px;
 }
@@ -531,11 +540,16 @@ ul.uk-article-meta {
 }
 
 .uk-comment-list > li:nth-child(n+2), .uk-comment-list .uk-comment + ul > li:nth-child(n+2) {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
-.depth-1 > ul.children  {
+/*.depth-1 > ul.children  {
   border-bottom: 2px solid #181818;
+}*/
+
+.uk-comment-list > li.comment {
+  background: #fff;
+  padding: 25px;
 }
 
 .uk-comment-header {
@@ -624,10 +638,15 @@ ul.uk-article-meta {
   border-width: 2px;
 }
 
+.comment-respond .uk-button {
+  border-color: #ddd;
+}
+
 /* Contact form
 --------------------------------------------- */
 label {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -649,6 +668,10 @@ div.wpcf7-acceptance-missing {
 
 .page-id-64 .uk-article {
   background: #fafafa;
+}
+
+.page-id-64 .uk-panel-box {
+  padding-top: 0;
 }
 
 /*
