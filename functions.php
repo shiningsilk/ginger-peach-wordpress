@@ -216,11 +216,12 @@ function gpeach_mobile_menu() {
 
 }
 
-// Change number of posts on archive and search pages 
+
+// Change number of posts on home page 
 add_filter('pre_get_posts', 'limit_archive_posts');
 function limit_archive_posts($query){
-    if ($query->is_archive || $query->is_search) {
-        $query->set('posts_per_page', 12);
+    if ($query->is_home) {
+        $query->set('posts_per_page', 5);
     }
     return $query;
 }
