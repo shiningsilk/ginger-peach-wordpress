@@ -79,9 +79,9 @@ blockquote {
 
 .uk-button:hover,
 .uk-button-primary:focus {
-  background-color: #f8f8f8;
-  border: 1px solid #f8f8f8;
-  color: #181818;
+  background-color: #181818;
+  border: 1px solid #181818;
+  color: #fff;
 }
 
 .uk-button-primary:active,
@@ -95,6 +95,10 @@ blockquote {
 a.more-link,
 a.more-link:visited {
   color: #181818;
+}
+
+a.more-link:hover {
+  color: #fff;
 }
 
 
@@ -151,17 +155,36 @@ h6 {
 .uk-form input,
 .uk-form select,
 .uk-form textarea,
-.uk-form input[type="search"] {
+.uk-form input[type="search"],
+.uk-form input[type="text"],
+.uk-form input[type="email"] {
+  background: #fff;
   border: 1px solid #ccc;
   border-radius: 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
   padding: 5px;
+  width: 100%;
+}
+
+.uk-form input[type="submit"] {
+  font-family: 'Open Sans', sans-sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.uk-form input[type="submit"]:hover {
+  background: #181818;
+  color: #fff;
+  cursor: pointer;
 }
 
 .uk-form input:focus,
 .uk-form textarea:focus,
-.uk-form input[type="search"]:focus {
+.uk-form input[type="search"]:focus,
+.uk-form input[type="text"]:focus,
+.uk-form input[type="email"]:focus {
 	background: #fff;
 	border: 1px solid #181818;
 	color: #181818;
@@ -281,6 +304,7 @@ header  {
 
 .tm-primary-menu button {
   background: #fafafa;
+  border: none;
   color: #181818;
 }
 
@@ -599,6 +623,30 @@ ul.uk-article-meta {
   border-color: #181818;
   border-width: 2px;
 }
+
+/* Contact form
+--------------------------------------------- */
+label {
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+span.wpcf7-not-valid-tip {
+  color: #181818;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: italic;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing {
+  border: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-style: italic;
+}
+
 
 /*
 Sidebar
