@@ -228,6 +228,10 @@ function gpeach_footer_content() {
 
 }
 
+// Remove class from comment list
+beans_remove_attribute( 'beans_comments', 'class', 'uk-panel-box');
+
+
 // Display the footer widget area in the front end.
 add_action( 'beans_footer_before_markup', 'display_footer_widget_area' );
 
