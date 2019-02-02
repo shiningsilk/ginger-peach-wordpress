@@ -55,7 +55,7 @@ function related_posts_tags() {
       $tag_query->the_post();
       $img = get_the_post_thumbnail( $post->ID, 'thumbnail');
 
-      $related .= '<div class="uk-width-medium-1-4 uk-width-small-2-4"><a href="' . get_permalink() . '">' . $img . '</a><h4 class="uk-article-title uk-text-center"><a href="' . get_permalink() . '">'. get_the_title() .'</a></h4></div>';
+      $related .= '<div class="uk-width-medium-1-4 uk-width-small-2-4"><a href="' . get_permalink() . '" title="' . get_the_title() .'">' . $img . '</a><h4 class="uk-article-title uk-text-center"><a href="' . get_permalink() . '">'. get_the_title() .'</a></h4></div>';
 
       }
 
