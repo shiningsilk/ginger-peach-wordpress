@@ -42,7 +42,7 @@ html {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   line-height: 1.625;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 70px);
 }
 
 a {
@@ -68,7 +68,7 @@ blockquote {
 }
 
 .uk-button {
-  background-color: #fff;
+  background: #fff;
   border: 1px solid #181818;
   border-radius: 0;
   color: #181818;
@@ -254,19 +254,21 @@ header  {
 }
 
 .uk-navbar-nav > li.uk-active > a,
-.uk-nav-dropdown > li.uk-active > a {
+.uk-nav-dropdown > li.uk-active > a,
+.uk-navbar-nav > li > a:active  {
   background-color: #fafafa;
-  border-bottom: 2px solid #181818;
-  color: #181818;
+  color: #999;
 }
 
 .uk-navbar-nav > li > a:hover,
-.uk-nav-dropdown > li > a:hover {
-  background-color: #d88255;
-  color: #fff;
+.uk-nav-dropdown > li > a:hover,
+.uk-nav-dropdown > li > a:focus {
+  background: #fafafa;
+  color: #febea8;
 }
 
 .uk-dropdown {
+  background: #fafafa;
   padding: 5px;
 }
 
@@ -274,6 +276,8 @@ header  {
   padding: 5px;
   margin: 0 15px;
 }
+
+
 
 .uk-nav-side > li.uk-active > a {
   background-color: #febea8;
@@ -341,8 +345,10 @@ header  {
 }
 
 
-.gpeach-menu .menu-item a:hover {
-  color: #d88255;
+.gpeach-menu .menu-item a:hover,
+.gpeach-menu .uk-active {
+  background: #fff;
+  color: #febea8;
 }
 
 .gpeach-menu > .menu-item > .sub-menu {
@@ -740,7 +746,7 @@ Site Footer
 .tm-footer {
   background: #fafafa;
   border-top: none;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 .gpeach-footer {
