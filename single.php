@@ -1,14 +1,27 @@
 <?php
 add_action( 'beans_comments_before_markup', 'related_posts_tags', 5 );
 
-add_action( 'beans_main_after_markup', 'gpeach_social_share');
+/*
+add_action( 'beans_post_meta_tags_after_markup', 'gpeach_social_share');
 
 function gpeach_social_share() {
-  ?><div class="gpeach-social-share">
-    <a href=""><i class="uk-icon-small uk-icon-pinterest uk-icon-hover"></i></a>
+  global $post;
+
+  // page url
+  $url = urlencode(get_permalink($post));
+
+  $gpeachurl = esc_url($url);
+
+  $gpeachThumbnail = get_post_thumbnail_id( $post->ID );
+
+  ?><div class="gpeach-social-share uk-float-right uk-display-inline-block">
+
+    <a href='http://twitter.com/home?status=Reading: <?php echo $url ?>' target="_blank"><i class="uk-icon-small uk-icon-twitter uk-icon-hover"></i></a>
+
+    <a href="http://www.pinterest.com/pin/create/button/?url=' . echo $url ' &media=<?php if(has_post_thumbnail()) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo urlencode( get_the_title() . ' - ' . get_permalink() ); ?>" class="simple-share ss-pinterest" target="_blank" rel="nofollow"><i class="uk-icon-small uk-icon-pinterest-p uk-icon-hover"></i></a>
   </div>
   <?php
-}
+}*/
 
 function related_posts_tags() {
 
