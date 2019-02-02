@@ -3,7 +3,6 @@
 // Include Beans. Do not remove the line below.
 require_once( get_template_directory() . '/lib/init.php' );
 
-// Remove this action and callback function if you are not adding CSS in the style.css file.
 add_action( 'wp_enqueue_scripts', 'beans_child_enqueue_assets' );
 
 function beans_child_enqueue_assets() {
@@ -22,7 +21,7 @@ add_action( 'beans_uikit_enqueue_scripts', 'gpeach_enqueue_uikit_assets');
 function gpeach_enqueue_uikit_assets() {
 
 	beans_uikit_enqueue_components( array('sticky'), 'add-ons');
-	//beans_uikit_enqueue_components( array('accordion'), 'add-ons');
+
 	beans_uikit_enqueue_components( array( 'toggle' ) );
 
 }
@@ -99,7 +98,6 @@ function sort_meta_items( $meta ) {
 // Move the post meta above post title
 beans_modify_action_hook( 'beans_post_meta', 'beans_post_title_before_markup' );
 
-
 // Modify category separator
 add_filter( 'the_category', 'gpeach_categories_output', 10, 2 );
 
@@ -150,10 +148,6 @@ function gpeach_previous_text_post_navigation() {
 
 }
 
-// Modify "Previous" post icon
-beans_replace_attribute( 'beans_previous_icon', 'class', 'uk-icon-angle-double-left', 'uk-icon-caret-left');
-
-
 // Modify the "Next" post navigation text.
 add_filter( 'beans_next_text_post_navigation_output', 'gpeach_next_text_post_navigation' );
 
@@ -168,6 +162,9 @@ function gpeach_next_text_post_navigation( $text ) {
 
 }
 
+// Modify "Previous" post icon
+beans_replace_attribute( 'beans_previous_icon', 'class', 'uk-icon-angle-double-left', 'uk-icon-caret-left');
+
 // Modify "Next" post icon
 beans_replace_attribute( 'beans_next_icon', 'class', 'uk-icon-angle-double-right', 'uk-icon-caret-right');
 
@@ -180,6 +177,9 @@ function gpeach_border() {
 
 // Add sticky last widget
 beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:30, media:767}' );
+
+// Remove class from comment list
+beans_remove_attribute( 'beans_comments', 'class', 'uk-panel-box');
 
 // Hide desktop primary nav
 beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
@@ -227,10 +227,6 @@ function gpeach_footer_content() {
 	<?php
 
 }
-
-// Remove class from comment list
-beans_remove_attribute( 'beans_comments', 'class', 'uk-panel-box');
-
 
 // Display the footer widget area in the front end.
 add_action( 'beans_footer_before_markup', 'display_footer_widget_area' );
