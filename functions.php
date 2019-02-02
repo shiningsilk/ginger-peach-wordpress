@@ -121,6 +121,8 @@ function gpeach_tags_output( $tag_list, $before, $sep ) {
 // Remove tag class
 beans_remove_attribute( 'beans_post_meta_tags', 'class', 'uk-text-muted');
 
+// Remove button primary class from comment submit
+beans_remove_attribute( 'beans_comment_form_submit', 'class', 'uk-button-primary');
 
 // Modify the read more text.
 add_filter( 'beans_post_more_link_text_output', 'gpeach_modify_read_more' );
