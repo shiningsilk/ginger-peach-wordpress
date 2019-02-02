@@ -181,6 +181,9 @@ beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:
 // Remove class from comment list
 beans_remove_attribute( 'beans_comments', 'class', 'uk-panel-box');
 
+// Move tags to article content 
+beans_modify_action_hook( 'beans_post_meta_tags', 'beans_post_content_append_markup');
+
 // Hide desktop primary nav
 beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
 
@@ -217,7 +220,7 @@ function gpeach_mobile_menu() {
 }
 
 
-// Change number of posts on home page 
+// Change number of posts on home page
 add_filter('pre_get_posts', 'limit_archive_posts');
 function limit_archive_posts($query){
     if ($query->is_home) {
