@@ -412,6 +412,10 @@ Content Area
   text-align: center;
 }
 
+.search .uk-article-title {
+  border-bottom: none;
+}
+
 .archive .uk-article,
 .search .uk-article,
 .error404 .uk-article {
