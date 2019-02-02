@@ -32,6 +32,8 @@ function gpeach_post_image_edit_args( $args ) {
   ) );
 }
 
+
+
   // Move the posts pagination after the new grid markup.
  beans_modify_action_hook( 'beans_posts_pagination', 'archive_posts_grid_after_markup' );
 

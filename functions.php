@@ -216,6 +216,15 @@ function gpeach_mobile_menu() {
 
 }
 
+// Change number of posts on archive and search pages 
+add_filter('pre_get_posts', 'limit_archive_posts');
+function limit_archive_posts($query){
+    if ($query->is_archive || $query->is_search) {
+        $query->set('posts_per_page', 12);
+    }
+    return $query;
+}
+
 // Footer credits
 beans_modify_action_callback( 'beans_footer_content', 'gpeach_footer_content' );
 
