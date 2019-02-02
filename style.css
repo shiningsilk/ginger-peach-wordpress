@@ -67,19 +67,21 @@ blockquote {
 }
 
 .uk-button {
-  background-color: #d88255;
+  background-color: #fff;
+  border: 1px solid #181818;
   border-radius: 0;
-  color: #fff;
+  color: #181818;
   font-family: 'Open Sans', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .uk-button:hover,
 .uk-button-primary:focus {
-  background-color: #febea8;
-  color: #fff;
+  background-color: #f8f8f8;
+  border: 1px solid #f8f8f8;
+  color: #181818;
 }
 
 .uk-button-primary:active,
@@ -92,8 +94,9 @@ blockquote {
 
 a.more-link,
 a.more-link:visited {
-  color: #fff;
+  color: #181818;
 }
+
 
 ::selection {
   background: #d88255;
@@ -225,7 +228,7 @@ header  {
 .uk-navbar-nav > li.uk-active > a,
 .uk-nav-dropdown > li.uk-active > a {
   background-color: #fafafa;
-  border-bottom: 2px solid #febea8;
+  border-bottom: 2px solid #181818;
   color: #181818;
 }
 
@@ -410,7 +413,15 @@ ul.uk-article-meta {
   font-family: 'Open Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 1px;
+}
+
+.uk-article-meta,
+.uk-article-meta time {
   text-transform: uppercase;
+}
+
+.uk-text-small {
+  text-transform: lowercase;
 }
 
 .uk-text-small a,
@@ -439,24 +450,31 @@ ul.uk-article-meta {
   text-transform: uppercase;
 }
 
-.single .uk-pagination li > a,
-.single .uk-pagination > li > span {
-  background: #d88255;
-  color: #fff;
-}
-
 .uk-pagination li > a:hover,
 .uk-pagination > li > a:focus  {
   background-color: #febea8;
 }
 
 .uk-pagination > li > a:active {
-  background-color: #febea8;
+  background-color: #fafafa;
 }
 
 .uk-pagination > .uk-active > span {
   background: #fff;
   color: #181818;
+}
+
+.single .uk-pagination li > a,
+.single .uk-pagination > li > span {
+  background: #fafafa;
+  border: 1px solid #181818;
+  color: #181818;
+}
+
+.single .uk-pagination li > a:hover,
+.single .uk-pagination > li > a:focus {
+  background: #fff;
+  border: 1px solid #fff;
 }
 
 /* Related Posts
@@ -671,7 +689,7 @@ Site Footer
 /*
 Media Queries
 ------------------------------------------------------------------------------- */
-@media only screen and (max-width: 1199px) {
+@media only screen and (max-width: 1200px) {
 
   .home .tm-article-image {
     width: 300px;
@@ -680,7 +698,7 @@ Media Queries
 
 }
 
-@media only screen and (max-width: 959px) {
+@media only screen and (max-width: 960px) {
 
   .home .tm-article-image {
     height: 200px;
