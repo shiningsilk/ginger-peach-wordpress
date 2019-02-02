@@ -163,7 +163,7 @@ h6 {
   border: 1px solid #eee;
   border-radius: 0;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   padding: 5px;
   width: 100%;
 }
@@ -610,7 +610,7 @@ ul.uk-article-meta {
 }
 
 #cancel-comment-reply-link:visited {
-  color: #fff;
+  color: #181818;
 }
 
 .uk-comment-header ul {
@@ -657,6 +657,16 @@ ul.uk-article-meta {
   border-color: #ddd;
 }
 
+/*.comment-form-comment-subscribe label {
+  display: block;
+}*/
+
+select#subscribe-reloaded {
+  width: auto;
+}
+
+
+
 /* Social Share Buttons
 --------------------------------------------- */
 /* .gpeach-social-share {
@@ -676,7 +686,7 @@ label {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 span.wpcf7-not-valid-tip {
