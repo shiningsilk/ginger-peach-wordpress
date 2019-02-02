@@ -181,7 +181,7 @@ beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:
 // Remove class from comment list
 beans_remove_attribute( 'beans_comments', 'class', 'uk-panel-box');
 
-// Move tags to article content 
+// Move tags to article content
 beans_modify_action_hook( 'beans_post_meta_tags', 'beans_post_content_append_markup');
 
 // Hide desktop primary nav
@@ -192,7 +192,7 @@ add_action( 'beans_primary_menu_append_markup', 'gpeach_primary_menu_toggle' );
 
 function gpeach_primary_menu_toggle() {
 
- ?><button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#gpeach-mobile-menu'}"><i class="uk-icon-navicon"></i></button><?php
+ ?><button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#gpeach-mobile-menu'}" aria-label="mobile-button"><i class="uk-icon-navicon"></i></button><?php
 
 }
 
