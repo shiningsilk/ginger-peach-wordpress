@@ -168,6 +168,11 @@ h6 {
   width: 100%;
 }
 
+.uk-form legend {
+  font-size: 14px;
+  text-transform: none;
+}
+
 .uk-form input[type="search"] {
   border: 1px solid #ccc;
 }
@@ -187,6 +192,7 @@ h6 {
 
 .uk-form input:focus,
 .uk-form textarea:focus,
+.uk-form select:focus,
 .uk-form input[type="search"]:focus,
 .uk-form input[type="text"]:focus,
 .uk-form input[type="email"]:focus {
