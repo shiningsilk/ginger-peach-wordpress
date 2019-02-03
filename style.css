@@ -261,9 +261,10 @@ header  {
 
 .uk-navbar-nav > li.uk-active > a,
 .uk-nav-dropdown > li.uk-active > a,
-.uk-navbar-nav > li > a:active  {
-  background-color: #fafafa;
-  color: #999;
+.uk-navbar-nav > li > a:active,
+.uk-navbar-nav > li > a:focus  {
+  background-color: #fff;
+  color: #181818;
 }
 
 .uk-navbar-nav > li > a:hover,
@@ -631,8 +632,8 @@ div.addtoany_share_save_container {
   margin-top: 10px;
 }
 
-#cancel-comment-reply-link:visited {
-  color: #181818;
+#cancel-comment-reply-link:hover {
+  color: #fff;
 }
 
 .uk-comment-header ul {
