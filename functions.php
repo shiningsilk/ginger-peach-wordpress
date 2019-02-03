@@ -38,10 +38,6 @@ beans_remove_action( 'beans_site_title_tag' );
 beans_remove_action( 'beans_no_comment' );
 // Remove symbol after read more text
 beans_remove_markup( 'beans_next_icon[_more_link]' );
-// Remove archive titles
-beans_remove_action( 'beans_post_archive_title' );
-// Remove search title
-beans_remove_action( 'beans_post_search_title');
 // Remove end post categories
 beans_remove_action( 'beans_post_meta_categories' );
 // Remove prefixes
@@ -187,7 +183,7 @@ beans_modify_action_hook( 'beans_post_meta_tags', 'beans_post_content_append_mar
 // Add comment link
 beans_modify_action_hook( 'beans_post_meta_comments_shortcode', 'beans_post_meta_tags_after_markup');
 
-// Add class to comment link 
+// Add class to comment link
 beans_add_attribute( 'beans_post_meta_comments', 'class', 'gpeach-post-meta-comments' );
 
 // Move comment form above comment list
