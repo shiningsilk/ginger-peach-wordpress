@@ -411,21 +411,31 @@ Content Area
 
 /* Template Entries
 --------------------------------------------- */
-.archive .uk-article-title,
-.search .uk-article-title,
-.error404 .uk-article-title {
+.archive h1,
+.search h1 {
+  border-bottom: 2px solid #181818;
+  text-align: left;
+}
+
+.error404 h1 {
+  text-align: center;
+}
+
+.archive h2,
+.search h2,
+.error404 h2 {
   font-size: 16px;
   margin: 0;
   text-align: center;
 }
 
-.archive .uk-article-title a:hover,
-.search .uk-article-title a:hover,
-.error404 .uk-article-title a:hover {
+.archive h2 a:hover,
+.search h2 a:hover,
+.error404 h2 a:hover {
   color: #febea8;
 }
 
-.search .uk-article-title {
+.search h2.uk-article-title {
   border-bottom: none;
 }
 
