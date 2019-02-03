@@ -9,7 +9,10 @@ beans_remove_action( 'beans_post_content');
 // Remove post meta info
 beans_remove_action( 'beans_post_meta' );
 beans_remove_action( 'beans_post_meta_tags' );
+
+// Move archive title before grid
 beans_modify_action_hook( 'beans_post_archive_title', 'archive_posts_grid_before_markup');
+
 // Add responsive grid
 beans_wrap_inner_markup( 'beans_content', 'archive_posts_grid', 'div', array(
 
