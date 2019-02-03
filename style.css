@@ -454,7 +454,8 @@ ul.uk-article-meta {
 
 .uk-text-small,
 .uk-article-meta,
-.uk-article-meta time {
+.uk-article-meta time,
+.gpeach-post-meta-comments {
   color: #181818;
   font-family: 'Open Sans', sans-serif;
   font-size: 11px;
@@ -469,22 +470,37 @@ ul.uk-article-meta {
 .uk-text-small {
   text-transform: lowercase;
   display: inline-block;
-  float: right;
   margin-top: 16px;
-  max-width: 50%;
+  text-align: center;
+  width: 33%;
 }
 
 .uk-text-small a,
-.uk-article-meta a {
+.uk-article-meta a,
+a.gpeach-post-meta-comments {
   color: #181818;
   font-size: 11px;
   line-height: 1.625;
 }
 
 .uk-text-small a:hover,
-.uk-article-meta a:hover {
+.uk-article-meta a:hover,
+a.gpeach-post-meta-comments:hover {
   background: transparent;
   color: #febea8;
+}
+
+.gpeach-post-meta-comments {
+  display: inline-block;
+  float: right;
+  margin-top: 16px;
+  text-align: right;
+  width: 33%;
+}
+
+div.addtoany_share_save_container {
+  display: inline-block;
+  width: 33%;
 }
 
 /* Post/Page Navigation
@@ -523,8 +539,8 @@ ul.uk-article-meta {
 
 .single .uk-pagination li > a:hover,
 .single .uk-pagination > li > a:focus {
-  background: #fff;
-  border: 1px solid #fff;
+  background: #181818;
+  color: #fff;
 }
 
 /* Related Posts
@@ -669,21 +685,6 @@ ul.uk-article-meta {
 
 select#subscribe-reloaded {
   width: auto;
-}
-
-
-
-/* Social Share Buttons
---------------------------------------------- */
-/* .gpeach-social-share {
-  position: fixed;
-  top: 80px;
-  right: 40px;
-}*/
-
-div.addtoany_share_save_container {
-  display: inline-block;
-
 }
 
 /* Contact form
