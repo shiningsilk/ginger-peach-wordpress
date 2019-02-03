@@ -15,9 +15,6 @@ function gpeach_tags_output( $tag_list, $before, $sep ) {
 // Remove tag class
 beans_remove_attribute( 'beans_post_meta_tags', 'class', 'uk-text-muted');
 
-// Remove button primary class from comment submit
-beans_remove_attribute( 'beans_comment_form_submit', 'class', 'uk-button-primary');
-
 // Modify the "Previous" post navigation text.
 add_filter( 'beans_previous_text_post_navigation_output', 'gpeach_previous_text_post_navigation' );
 
@@ -55,6 +52,9 @@ beans_remove_action( 'beans_no_comment' );
 
 // Remove class from comment list
 beans_remove_attribute( 'beans_comments', 'class', 'uk-panel-box');
+
+// Remove button primary class from comment submit
+beans_remove_attribute( 'beans_comment_form_submit', 'class', 'uk-button-primary');
 
 // Move tags to article content
 beans_modify_action_hook( 'beans_post_meta_tags', 'beans_post_content_append_markup');
