@@ -1,4 +1,36 @@
 <?php
+/*
+add_action( 'wp_enqueue_scripts', 'wpsites_pin_images_script' );
+
+function wpsites_pin_images_script() {
+    wp_register_script( 'pin-images',
+        get_stylesheet_directory_uri() . '/js/pin.js',
+        false,
+        '1.0',
+        true
+    );
+
+    wp_enqueue_script( 'pin-images' );
+}*/
+/*
+// add pinterest script
+add_action( 'wp_enqueue_scripts', 'gpeach_enqueue_pinterest' );
+
+function gpeach_enqueue_pinterest() {
+wp_register_script( 'gpeach_pinterest', '//assets.pinterest.com/js/pinit.js', array(), false, true);
+}
+
+// add pinterest script attributes
+
+function add_async_attribute($tag, $handle) {
+    if ( 'gpeach_pinterest' !== $handle )
+        return $tag;
+    return str_replace( ' src', ' async="async" data-pin-hover="true" data-pin-round="true" src', $tag );
+}
+
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+
+*/
 
 // Remove featured image
 beans_remove_action( 'beans_post_image' );
@@ -81,20 +113,24 @@ function gpeach_social_share() {
   global $post;
 
   // page url
-  $url = urlencode(get_permalink($post));
+  $url = esc_url(get_permalink($post));
 
-  $gpeachurl = esc_url($url);
+
 
   $gpeachThumbnail = get_post_thumbnail_id( $post->ID );
 
-  ?><div class="gpeach-social-share uk-float-right uk-display-inline-block">
+  ?><div class="gpeach-social-share">
 
     <a href='http://twitter.com/home?status=Reading: <?php echo $url ?>' target="_blank"><i class="uk-icon-small uk-icon-twitter uk-icon-hover"></i></a>
 
-    <a href="http://www.pinterest.com/pin/create/button/?url=' . echo $url ' &media=<?php if(has_post_thumbnail()) echo wp_get_attachment_url(get_post_thumbnail_id()); ?>&description=<?php echo urlencode( get_the_title() . ' - ' . get_permalink() ); ?>" class="simple-share ss-pinterest" target="_blank" rel="nofollow"><i class="uk-icon-small uk-icon-pinterest-p uk-icon-hover"></i></a>
+
+    <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" data-pin-custom="true"><i class="uk-icon-small uk-icon-pinterest-p uk-icon-hover"></i>
+    </a>
+
   </div>
   <?php
-}*/
+}
+*/
 
 function related_posts_tags() {
 
