@@ -603,10 +603,6 @@ div.addtoany_share_save_container {
   margin-top: 20px;
 }
 
-/*.depth-1 > ul.children  {
-  border-bottom: 2px solid #181818;
-}*/
-
 .uk-comment-list > li.comment {
   background: #fff;
   padding: 25px;
@@ -702,10 +698,6 @@ div.addtoany_share_save_container {
   border-color: #ddd;
 }
 
-/*.comment-form-comment-subscribe label {
-  display: block;
-}*/
-
 select#subscribe-reloaded {
   width: auto;
 }
@@ -791,8 +783,7 @@ a.uk-icon-button:visited {
 }
 
 a.uk-icon-button:hover {
-  background-color: #febea8;
-  color: #fff;
+  color: #febea8;
 }
 
 .uk-icon-button {
