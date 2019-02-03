@@ -28,22 +28,9 @@ function gpeach_enqueue_uikit_assets() {
 
 // Add sticky header
 beans_add_attribute( 'beans_header', 'data-uk-sticky', "{top:0}" );
-// Remove off canvas menu
-remove_theme_support( 'offcanvas-menu' );
-// Remove the breadcrumb.
-add_filter( 'beans_pre_load_fragment_breadcrumb', '__return_true' );
-// Remove the site title tag.
-beans_remove_action( 'beans_site_title_tag' );
-// Remove "No comment yet" text
-beans_remove_action( 'beans_no_comment' );
-// Remove symbol after read more text
-beans_remove_markup( 'beans_next_icon[_more_link]' );
-// Remove end post categories
-beans_remove_action( 'beans_post_meta_categories' );
-// Remove prefixes
-beans_remove_output( 'beans_post_meta_date_prefix' );
-beans_remove_output( 'beans_post_meta_categories_prefix' );
-beans_remove_output( 'beans_post_meta_tags_prefix' );
+
+// Add sticky last widget
+beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:30, media:767}' );
 
 // Remove the secondary sidebar.
 add_action( 'widgets_init', 'secondary_widget_area' );
@@ -54,26 +41,33 @@ function secondary_widget_area() {
 
 }
 
-// Remove featured image on single posts
-add_action( 'wp', 'beans_child_setup_document' );
+// Remove off canvas menu
+remove_theme_support( 'offcanvas-menu' );
 
-function beans_child_setup_document() {
+// Remove the breadcrumb.
+add_filter( 'beans_pre_load_fragment_breadcrumb', '__return_true' );
 
-  // Only apply if for single view.
- if ( is_single() ) {
-    beans_remove_action( 'beans_post_image' );
+// Remove the site title tag.
+beans_remove_action( 'beans_site_title_tag' );
 
-  }
+// Remove symbol after read more text
+beans_remove_markup( 'beans_next_icon[_more_link]' );
 
-}
+// Remove end post categories
+beans_remove_action( 'beans_post_meta_categories' );
+
+// Remove post meta prefixes
+beans_remove_output( 'beans_post_meta_date_prefix' );
+beans_remove_output( 'beans_post_meta_categories_prefix' );
+beans_remove_output( 'beans_post_meta_tags_prefix' );
 
 // Remove post author
 add_filter( 'beans_post_meta_items', 'beans_child_remove_post_meta_items' );
 
 function beans_child_remove_post_meta_items( $items ) {
 
- unset( $items['author']['comments'] );
-  return $items;
+ 	unset( $items['author']['comments'] );
+	return $items;
 
 }
 
@@ -103,21 +97,6 @@ function gpeach_categories_output( $thelist, $separator ) {
 
 }
 
-// Modify tag separator
-add_filter( 'the_tags', 'gpeach_tags_output', 10, 3 );
-
-function gpeach_tags_output( $tag_list, $before, $sep ) {
-
-	return str_replace( $sep, ' &bull; ', $tag_list );
-
-}
-
-// Remove tag class
-beans_remove_attribute( 'beans_post_meta_tags', 'class', 'uk-text-muted');
-
-// Remove button primary class from comment submit
-beans_remove_attribute( 'beans_comment_form_submit', 'class', 'uk-button-primary');
-
 // Modify the read more text.
 add_filter( 'beans_post_more_link_text_output', 'gpeach_modify_read_more' );
 
@@ -130,67 +109,12 @@ function gpeach_modify_read_more() {
 // Add button class to read more link
 beans_add_attribute( 'beans_post_more_link', 'class', 'uk-button button' );
 
-// Modify the "Previous" post navigation text.
-add_filter( 'beans_previous_text_post_navigation_output', 'gpeach_previous_text_post_navigation' );
-
-function gpeach_previous_text_post_navigation() {
-
-  if ( $post = get_previous_post() ) {
-    $text = $post->post_title;
-
-  }
-
- return $text;
-
-}
-
-// Modify the "Next" post navigation text.
-add_filter( 'beans_next_text_post_navigation_output', 'gpeach_next_text_post_navigation' );
-
-function gpeach_next_text_post_navigation( $text ) {
-
- if ( $post = get_next_post() ) {
-    $text = $post->post_title;
-
-  }
-
- return $text;
-
-}
-
-// Modify "Previous" post icon
-beans_replace_attribute( 'beans_previous_icon', 'class', 'uk-icon-angle-double-left', 'uk-icon-caret-left');
-
-// Modify "Next" post icon
-beans_replace_attribute( 'beans_next_icon', 'class', 'uk-icon-angle-double-right', 'uk-icon-caret-right');
-
 // Add widget title border
 add_action( 'beans_widget_title_after_markup', 'gpeach_border');
 
 function gpeach_border() {
 	?><div class="divider"></div><?php
 }
-
-// Add sticky last widget
-beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:30, media:767}' );
-
-// Remove class from comment list
-beans_remove_attribute( 'beans_comments', 'class', 'uk-panel-box');
-
-// Move tags to article content
-beans_modify_action_hook( 'beans_post_meta_tags', 'beans_post_content_append_markup');
-
-// Add comment link
-beans_modify_action_hook( 'beans_post_meta_comments_shortcode', 'beans_post_meta_tags_after_markup');
-
-// Add class to comment link
-beans_add_attribute( 'beans_post_meta_comments', 'class', 'gpeach-post-meta-comments' );
-
-// Move comment form above comment list
-beans_modify_action_hook( 'beans_comment_form', 'beans_comments_prepend_markup');
-
-//Move comment divider above comment list header
-beans_modify_action_hook( 'beans_comment_form_divider', 'beans_comments_title_before_markup');
 
 // Hide desktop primary nav
 beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
@@ -200,7 +124,9 @@ add_action( 'beans_primary_menu_append_markup', 'gpeach_primary_menu_toggle' );
 
 function gpeach_primary_menu_toggle() {
 
- ?><button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#gpeach-mobile-menu'}" aria-label="mobile-button"><i class="uk-icon-navicon"></i></button><?php
+	?>
+		<button class="uk-button uk-hidden-large" data-uk-toggle="{target:'#gpeach-mobile-menu'}" aria-label="mobile-button"><i class="uk-icon-navicon"></i></button>
+	<?php
 
 }
 
@@ -211,30 +137,34 @@ function gpeach_mobile_menu() {
 
   ?>
   <div id="gpeach-mobile-menu" class="uk-hidden uk-container uk-container-center">
-   <div class="uk-panel-box">
-     <?php  wp_nav_menu( array(
-			 'menu_class' => 'gpeach-menu',
-       'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
-       'fallback_cb' => 'beans_no_menu_notice',
-        'container' => '',
-        'beans_type' => 'mobile'
-     ) );
-
-		 ?>
-   </div>
-  </div>
+  <div class="uk-panel-box">
   <?php
+	wp_nav_menu( array(
+		'menu_class' => 'gpeach-menu',
+    'theme_location' => has_nav_menu( 'primary' ) ? 'primary' : '',
+    'fallback_cb' => 'beans_no_menu_notice',
+    'container' => '',
+    'beans_type' => 'mobile'
+  ) );
+	?>
+	</div>
+  </div>
+	<?php
 
 }
 
 
 // Change number of posts on home page
 add_filter('pre_get_posts', 'limit_archive_posts');
+
 function limit_archive_posts($query){
-    if ($query->is_home) {
+
+		if ($query->is_home) {
         $query->set('posts_per_page', 5);
     }
+
     return $query;
+
 }
 
 // Footer credits
@@ -242,9 +172,9 @@ beans_modify_action_callback( 'beans_footer_content', 'gpeach_footer_content' );
 
 function gpeach_footer_content() {
 
-	?> <div class="tm-sub-footer uk-text-center"> <p>©
-	<?php echo date('Y');
-	?> Ginger Peach. Site by <a href="http://kgeorge.co"  target="_blank" title="KGeorge"> KG.</a></p></div>
+	?>
+	<div class="tm-sub-footer uk-text-center"> <p>©<?php echo date('Y');?>
+	Ginger Peach. Site by <a href="http://kgeorge.co"  target="_blank" title="KGeorge"> KG.</a></p></div>
 	<?php
 
 }
@@ -254,11 +184,9 @@ add_action( 'beans_footer_before_markup', 'display_footer_widget_area' );
 
 function display_footer_widget_area() {
 
- ?>
-  <div class="gpeach-footer uk-block">
-   <div class="uk-container uk-container-center">
-      <?php echo beans_widget_area( 'footer' ); ?>
-    </div>
+	?>
+	<div class="gpeach-footer uk-block"><div class="uk-container uk-container-center"><?php echo beans_widget_area( 'footer' ); ?>
+  </div>
   </div>
   <?php
 

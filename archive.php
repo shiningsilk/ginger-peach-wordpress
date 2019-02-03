@@ -29,6 +29,7 @@ beans_wrap_markup( 'beans_post', 'archive_post_grid_column', 'div', array(
 
 // Resize featured image
 add_filter( 'beans_edit_post_image_args', 'gpeach_post_image_edit_args' );
+
 function gpeach_post_image_edit_args( $args ) {
   return array_merge( $args, array(
     'resize' => array( 400, 400, true ),

@@ -2,6 +2,7 @@
 
 // Post excerpts
 add_filter( 'the_content', 'beans_child_modify_post_content' );
+
 function beans_child_modify_post_content( $content ) {
   // Returns the excerpt with read more link.
   return sprintf(
@@ -10,7 +11,7 @@ function beans_child_modify_post_content( $content ) {
           beans_post_more_link()
     );
 
-  }
+}
 
 // Move the post image above the post title.
 beans_modify_action_hook( 'beans_post_image', 'beans_post_header_before_markup' );
@@ -22,9 +23,11 @@ beans_remove_action( 'beans_post_meta_tags' );
 add_filter( 'beans_edit_post_image_args', 'gpeach_post_image_edit_args' );
 
 function gpeach_post_image_edit_args( $args ) {
+
   return array_merge( $args, array(
   	'resize' => array( 400, 400, true ),
   ) );
+
 }
 
 // Load the document

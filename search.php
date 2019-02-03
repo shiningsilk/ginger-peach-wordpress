@@ -15,6 +15,7 @@ beans_modify_action_hook( 'beans_post_search_title', 'search_posts_grid_before_m
 
 // Modify search title text
 add_filter( 'beans_search_title_text_output', 'modify_search_title' );
+
 function modify_search_title() {
        return 'Results for: ';
 }
