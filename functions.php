@@ -184,7 +184,11 @@ beans_remove_attribute( 'beans_comments', 'class', 'uk-panel-box');
 // Move tags to article content
 beans_modify_action_hook( 'beans_post_meta_tags', 'beans_post_content_append_markup');
 
+// Add comment link
 beans_modify_action_hook( 'beans_post_meta_comments_shortcode', 'beans_post_meta_tags_after_markup');
+
+// Add class to comment link 
+beans_add_attribute( 'beans_post_meta_comments', 'class', 'gpeach-post-meta-comments' );
 
 // Move comment form above comment list
 beans_modify_action_hook( 'beans_comment_form', 'beans_comments_prepend_markup');
