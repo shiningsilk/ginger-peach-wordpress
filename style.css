@@ -419,6 +419,12 @@ Content Area
   text-align: center;
 }
 
+.archive .uk-article-title a:hover,
+.search .uk-article-title a:hover,
+.error404 .uk-article-title a:hover {
+  color: #febea8;
+}
+
 .search .uk-article-title {
   border-bottom: none;
 }
@@ -434,6 +440,12 @@ Content Area
 .search .tm-article-image,
 .error404 .tm-article-image {
   margin-bottom: 0;
+}
+
+.archive .tm-article-image:hover,
+.search .tm-article-image:hover,
+.error404 .tm-article-image:hover {
+  opacity: 0.5;
 }
 
 .uk-alert-warning {
