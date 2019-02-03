@@ -184,6 +184,14 @@ beans_remove_attribute( 'beans_comments', 'class', 'uk-panel-box');
 // Move tags to article content
 beans_modify_action_hook( 'beans_post_meta_tags', 'beans_post_content_append_markup');
 
+beans_modify_action_hook( 'beans_post_meta_comments_shortcode', 'beans_post_meta_tags_after_markup');
+
+// Move comment form above comment list
+beans_modify_action_hook( 'beans_comment_form', 'beans_comments_prepend_markup');
+
+//Move comment divider above comment list header
+beans_modify_action_hook( 'beans_comment_form_divider', 'beans_comments_title_before_markup');
+
 // Hide desktop primary nav
 beans_add_attribute( 'beans_menu[_navbar][_primary]', 'class', 'uk-visible-large' );
 
