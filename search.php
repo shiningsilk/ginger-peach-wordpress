@@ -10,6 +10,9 @@ beans_remove_action( 'beans_post_content');
 beans_remove_action( 'beans_post_meta' );
 beans_remove_action( 'beans_post_meta_tags' );
 
+// Move search title before grid
+beans_modify_action_hook( 'beans_post_search_title', 'search_posts_grid_before_markup');
+
 // Add responsive grid
 beans_wrap_inner_markup( 'beans_content', 'search_posts_grid', 'div', array(
 
