@@ -24,7 +24,9 @@ Content Area
   Post/Page Navigation
   Related Posts
   Comments
+  Contact Form
 Sidebar
+  Social Media Icons
 Site Footer
 */
 
@@ -577,6 +579,10 @@ div.addtoany_share_save_container {
   padding: 25px;
 }
 
+.uk-comment-header {
+  margin-bottom: 10px;
+}
+
 .uk-comment-avatar img {
   border-radius: 50%;
 }
@@ -586,37 +592,13 @@ div.addtoany_share_save_container {
   font-size: 14px;
   letter-spacing: 1px;
   line-height: 1.625;
-  margin: 0;
   text-transform: uppercase;
-}
-
-
-.uk-badge {
-  background-color: #d88255;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 1.625;
-  font-size: 10px;
-  font-weight: normal;
-
 }
 
 .uk-comment-meta {
   color: #181818;
   font-family: 'Open Sans', sans-serif;
   font-size: 10px;
-}
-
-.uk-comment-body {
-  margin-top: 10px;
-}
-
-#cancel-comment-reply-link:hover {
-  color: #fff;
-}
-
-.uk-comment-header ul {
-  float: none;
-  margin: 0;;
 }
 
 .tm-comment-links > li > a {
@@ -629,7 +611,6 @@ div.addtoany_share_save_container {
 
 .tm-comment-links > li {
   background-color: #fff;
-  color: #181818;
   padding: 5px 10px;
   text-align: center;
 }
@@ -639,7 +620,6 @@ div.addtoany_share_save_container {
   background-color: #fafafa;
   color: #181818;
 }
-
 
 .uk-subnav-line > :nth-child(n+2):before {
   display: none;
@@ -658,17 +638,20 @@ div.addtoany_share_save_container {
   border-color: #ddd;
 }
 
+#cancel-comment-reply-link:hover {
+  color: #fff;
+}
+
 select#subscribe-reloaded {
   width: auto;
 }
 
-/* Contact form
+/* Contact Form
 --------------------------------------------- */
 label {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
   letter-spacing: 1px;
-  text-transform: none;
 }
 
 span.wpcf7-not-valid-tip {
@@ -697,14 +680,19 @@ div.wpcf7-acceptance-missing {
 /*
 Sidebar
 ------------------------------------------------------------------------------- */
-.tm-secondary a:visited {
-  color: #181818;
-}
 
 .tm-secondary {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   opacity: 0.99;
+}
+
+.tm-secondary a:visited {
+  color: #181818;
+}
+
+.tm-secondary a:hover {
+  color: #febea8;
 }
 
 .uk-panel-title {
@@ -756,15 +744,15 @@ a.uk-icon-button:hover {
 /*
 Site Footer
 ------------------------------------------------------------------------------- */
+
+.gpeach-footer {
+  background-color: #fafafa;
+}
+
 .tm-footer {
   background-color: #fafafa;
   border-top: none;
   padding: 5px 0;
-}
-
-.gpeach-footer {
-  background-color: #fafafa;
-  display: none;
 }
 
 .tm-sub-footer p {
@@ -779,10 +767,10 @@ Site Footer
   color: #181818;
 }
 
-
 /*
 Media Queries
 ------------------------------------------------------------------------------- */
+
 @media only screen and (max-width: 1200px) {
 
   .home .tm-article-image {
