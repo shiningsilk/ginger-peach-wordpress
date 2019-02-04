@@ -53,6 +53,14 @@ beans_remove_action( 'beans_no_comment' );
 // Remove class from comment list
 beans_remove_attribute( 'beans_comments', 'class', 'uk-panel-box');
 
+// Remove comment badges
+//beans_remove_action( 'beans_comment_badges');
+
+add_filter( 'beans_moderator_text_output', 'gpeach_moderator_text' );
+function gpeach_moderator_text() {
+       return 'Mod';
+}
+
 // Remove button primary class from comment submit
 beans_remove_attribute( 'beans_comment_form_submit', 'class', 'uk-button-primary');
 
