@@ -1,17 +1,16 @@
 <?php
 
 add_filter( 'beans_no_post_article_title_text_output', 'gpeach_no_post_article_title_text' );
+
 function gpeach_no_post_article_title_text() {
        return 'Page not found';
 }
 
 add_filter( 'beans_no_post_article_content_text_output', 'gpeach_no_post_article_content_text' );
+
 function gpeach_no_post_article_content_text() {
        return 'Try searching or check out some popular posts';
 }
-
-
-
 
 // Add popular posts grid
 add_action( 'beans_content', 'popular_posts_grid' );
