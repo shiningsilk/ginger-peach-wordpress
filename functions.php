@@ -153,13 +153,12 @@ function gpeach_mobile_menu() {
 
 }
 
-
 // Change number of posts on home page
 add_filter('pre_get_posts', 'limit_home_posts');
 
 function limit_home_posts($query){
 
-   if ($query->is_home && $query->is_main_query) {
+   if ($query->is_home && !is_singular()) {
         $query->set('posts_per_page', 6);
     }
 
