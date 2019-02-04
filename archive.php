@@ -16,7 +16,7 @@ beans_modify_action_hook( 'beans_post_archive_title', 'archive_posts_grid_before
 // Add responsive grid
 beans_wrap_inner_markup( 'beans_content', 'archive_posts_grid', 'div', array(
 
-  'class' => 'uk-grid uk-grid-match',
+  'class' => 'gpeach-grid uk-grid uk-grid-match',
   'data-uk-grid-margin' => ''
 
 ));
