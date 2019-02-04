@@ -46,6 +46,7 @@ html {
   font-size: 14px;
   line-height: 1.625;
   min-height: calc(100vh - 70px);
+  padding-top: 40px;
 }
 
 a {
@@ -418,8 +419,8 @@ Content Area
   border-bottom: none;
 }
 
-.archive .uk-grid,
-.search .uk-grid {
+.archive .gpeach-grid,
+.search .gpeach-grid {
   margin-top: 20px;
 }
 
