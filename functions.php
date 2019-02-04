@@ -153,12 +153,13 @@ function gpeach_mobile_menu() {
 
 }
 
+
 // Change number of posts on home page
-add_filter('pre_get_posts', 'limit_archive_posts');
+add_filter('pre_get_posts', 'limit_home_posts');
 
-function limit_archive_posts($query){
+function limit_home_posts($query){
 
-		if ($query->is_home) {
+   if ($query->is_home && $query->is_main_query) {
         $query->set('posts_per_page', 6);
     }
 
@@ -184,9 +185,9 @@ add_action( 'beans_footer_before_markup', 'display_footer_widget_area' );
 function display_footer_widget_area() {
 
 	?>
-	<div class="gpeach-footer uk-block"><div class="uk-container uk-container-center"><?php echo beans_widget_area( 'footer' ); ?>
+	<div class="gpeach-footer uk-block"><?php echo beans_widget_area( 'footer' ); ?>
   </div>
-  </div>
+
   <?php
 
 }
@@ -199,7 +200,7 @@ function footer_widget_area() {
     beans_register_widget_area( array(
         'name' => 'Footer',
         'id' => 'footer',
-        'beans_type' => 'grid'
+        'beans_type' => 'geach-insta'
     ) );
 
 }
