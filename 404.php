@@ -1,19 +1,17 @@
 <?php
 
-// Update the 404 page title
-beans_add_smart_action( 'beans_no_post_article_title_text_output', 'gpeach_404_post_title' );
-
-function gpeach_404_post_title() {
-  return beans_output( 'gpeach_no_post_article_title_text', __( 'Page not found', 'gpeach' ) );
-
-
+add_filter( 'beans_no_post_article_title_text_output', 'gpeach_no_post_article_title_text' );
+function gpeach_no_post_article_title_text() {
+       return 'Page not found';
 }
-// Update the 404 page content
-beans_add_smart_action( 'beans_no_post_article_content_text_output', 'gpeach_404_post_content' );
 
-function gpeach_404_post_content() {
-  return beans_output( 'gpeach_no_post_article_content_text', __( 'Try searching or check out some popular posts', 'gpeach' ) );
+add_filter( 'beans_no_post_article_content_text_output', 'gpeach_no_post_article_content_text' );
+function gpeach_no_post_article_content_text() {
+       return 'Try searching or check out some popular posts';
 }
+
+
+
 
 // Add popular posts grid
 add_action( 'beans_content', 'popular_posts_grid' );
