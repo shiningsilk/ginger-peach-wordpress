@@ -418,6 +418,11 @@ Content Area
   border-bottom: none;
 }
 
+.archive .uk-grid,
+.search .uk-grid {
+  margin-top: 20px;
+}
+
 .archive .uk-article,
 .search .uk-article,
 .error404 .uk-article {
