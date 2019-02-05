@@ -171,13 +171,16 @@ h6 {
   text-transform: none;
 }
 
+
 .uk-form input[type="submit"] {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
+  height: 40px;
   letter-spacing: 1px;
   text-transform: uppercase;
   width: 100%;
 }
+
 
 .uk-form input[type="submit"]:hover {
   background-color: #181818;
@@ -650,6 +653,7 @@ div.addtoany_share_save_container {
 
 .comment-respond .uk-button {
   border-color: #ddd;
+  height: 40px;
 }
 
 #cancel-comment-reply-link:hover {
@@ -660,12 +664,22 @@ select#subscribe-reloaded {
   width: auto;
 }
 
+.gpeach-subscription span {
+  vertical-align: middle;
+}
+
+.gpeach-subscription input {
+      margin: 0 5px 0 0;
+  vertical-align: middle;
+}
+
 /* Contact Form
 --------------------------------------------- */
 label {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 12px;
   letter-spacing: 1px;
+  vertical-align: middle;
 }
 
 span.wpcf7-not-valid-tip {
@@ -747,6 +761,7 @@ a.uk-icon-button:visited {
 }
 
 a.uk-icon-button:hover {
+  background-color: #fafafa;
   color: #febea8;
 }
 
@@ -756,6 +771,19 @@ a.uk-icon-button:hover {
   line-height: 30px;
 }
 
+/* Mail Chimp
+--------------------------------------------- */
+.tm-secondary .mc4wp-form label {
+  visibility: hidden;
+}
+
+.tm-secondary .mc4wp-form {
+  margin-top: 10px;
+}
+
+.mc4wp-checkbox-wp-comment-form span {
+  vertical-align: middle;
+}
 /*
 Site Footer
 ------------------------------------------------------------------------------- */
