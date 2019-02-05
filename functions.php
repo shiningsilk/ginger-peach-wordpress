@@ -30,7 +30,7 @@ function gpeach_enqueue_uikit_assets() {
 beans_add_attribute( 'beans_header', 'data-uk-sticky', "{top:0}" );
 
 // Add sticky last widget
-beans_add_attribute( 'beans_widget_panel_recent-posts', 'data-uk-sticky', '{top:30, media:767}' );
+beans_add_attribute( 'beans_widget_panel_mc4wp_form_widget', 'data-uk-sticky', '{top:30, media:767}' );
 
 // Remove the secondary sidebar.
 add_action( 'widgets_init', 'secondary_widget_area' );
