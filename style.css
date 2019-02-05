@@ -46,7 +46,7 @@ html {
   font-size: 14px;
   line-height: 1.625;
   min-height: calc(100vh - 70px);
-  padding-top: 40px;
+  padding: 50px 0 20px;
 }
 
 a {
@@ -157,6 +157,12 @@ h6 {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   padding: 5px;
+}
+
+.uk-form textarea,
+.uk-form input[type="search"],
+.uk-form input[type="text"],
+.uk-form input[type="email"] {
   width: 100%;
 }
 
@@ -170,6 +176,7 @@ h6 {
   font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  width: 100%;
 }
 
 .uk-form input[type="submit"]:hover {
@@ -249,7 +256,8 @@ Site Header
 
 .uk-navbar-nav > li > a:active,
 .uk-navbar-nav > li > a:focus,
-.uk-nav-dropdown > li > a:focus {
+.uk-nav-dropdown > li > a:focus,
+.uk-navbar-nav > li.uk-active > a {
   background-color: #fff;
   color: #181818;
 }
@@ -669,7 +677,8 @@ span.wpcf7-not-valid-tip {
 }
 
 div.wpcf7-validation-errors,
-div.wpcf7-acceptance-missing {
+div.wpcf7-acceptance-missing,
+div.wpcf7-mail-sent-ok {
   border: none;
   font-family: 'Source Sans Pro', sans-serif;
   font-style: italic;
@@ -753,6 +762,7 @@ Site Footer
 
 .gpeach-footer {
   background-color: #fafafa;
+  padding: 20px 0;
 }
 
 .tm-footer {
